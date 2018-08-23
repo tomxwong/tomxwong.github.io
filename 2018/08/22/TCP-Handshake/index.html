@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>TCP-Handshake | Sharing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CLOSED CLOSEDLISTEN————–SYN————&amp;gt;SYN_SENT SYN_RCVD&amp;lt;————-ACK+SYN———————–ACK————&amp;gt;ESTABLISHED ESTABLISHED ESTABLISHED ESTABLISHED————-FIN————-&amp;gt;FIN_WAIT1&amp;lt;————ACK————–FIN_WAIT2 CLOSE_WAIT TIM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP-Handshake">
+<meta property="og:url" content="https://warrenwx.github.io/2018/08/22/TCP-Handshake/index.html">
+<meta property="og:site_name" content="Sharing">
+<meta property="og:description" content="CLOSED CLOSEDLISTEN————–SYN————&amp;gt;SYN_SENT SYN_RCVD&amp;lt;————-ACK+SYN———————–ACK————&amp;gt;ESTABLISHED ESTABLISHED ESTABLISHED ESTABLISHED————-FIN————-&amp;gt;FIN_WAIT1&amp;lt;————ACK————–FIN_WAIT2 CLOSE_WAIT TIM">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-23T09:56:22.042Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TCP-Handshake">
+<meta name="twitter:description" content="CLOSED CLOSEDLISTEN————–SYN————&amp;gt;SYN_SENT SYN_RCVD&amp;lt;————-ACK+SYN———————–ACK————&amp;gt;ESTABLISHED ESTABLISHED ESTABLISHED ESTABLISHED————-FIN————-&amp;gt;FIN_WAIT1&amp;lt;————ACK————–FIN_WAIT2 CLOSE_WAIT TIM">
+  
+    <link rel="alternate" href="/atom.xml" title="Sharing" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sharing</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://warrenwx.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-TCP-Handshake" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/22/TCP-Handshake/" class="article-date">
+  <time datetime="2018-08-22T20:42:29.000Z" itemprop="datePublished">2018-08-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TCP-Handshake
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CLOSED CLOSED<br>LISTEN<br>————–SYN————&gt;<br>SYN_SENT SYN_RCVD<br>&lt;————-ACK+SYN———<br>————–ACK————&gt;<br>ESTABLISHED ESTABLISHED</p>
+<p>ESTABLISHED ESTABLISHED<br>————-FIN————-&gt;<br>FIN_WAIT1<br>&lt;————ACK————–<br>FIN_WAIT2 CLOSE_WAIT</p>
+<p><------------fin-------------- last_ack="" -------------ack-------------=""><br>TIME_WAIT(2MSL) CLOSED<br>CLOSED<br>慢开始算法：当主机开始发送数据时，如果立即所大量数据字节注入到网络，那么就有可能引起网络拥塞，因为现在并不清楚网络的负荷情况。因此，较好的方法是 先探测一下，即由小到大逐渐增大发送窗口，也就是说，由小到大逐渐增大拥塞窗口数值。通常在刚刚开始发送报文段时，先把拥塞窗口 cwnd 设置为一个最大报文段MSS的数值。而在每收到一个对新的报文段的确认后，把拥塞窗口增加至多一个MSS的数值。用这样的方法逐步增大发送方的拥塞窗口 cwnd ，可以使分组注入到网络的速率更加合理。</------------fin--------------></p>
+<p>每经过一个传输轮次，拥塞窗口 cwnd 就加倍。一个传输轮次所经历的时间其实就是往返时间RTT。不过“传输轮次”更加强调：把拥塞窗口cwnd所允许发送的报文段都连续发送出去，并收到了对已发送的最后一个字节的确认。</p>
+<p>另，慢开始的“慢”并不是指cwnd的增长速率慢，而是指在TCP开始发送报文段时先设置cwnd=1，使得发送方在开始时只发送一个报文段（目的是试探一下网络的拥塞情况），然后再逐渐增大cwnd。</p>
+<p>为了防止拥塞窗口cwnd增长过大引起网络拥塞，还需要设置一个慢开始门限ssthresh状态变量（如何设置ssthresh）。慢开始门限ssthresh的用法如下：</p>
+<p>当 cwnd &lt; ssthresh 时，使用上述的慢开始算法。</p>
+<p>当 cwnd &gt; ssthresh 时，停止使用慢开始算法而改用拥塞避免算法。</p>
+<p>当 cwnd = ssthresh 时，既可使用慢开始算法，也可使用拥塞控制避免算法。</p>
+<p>拥塞避免算法：让拥塞窗口cwnd缓慢地增大，即每经过一个往返时间RTT就把发送方的拥塞窗口cwnd加1，而不是加倍。这样拥塞窗口cwnd按线性规律缓慢增长，比慢开始算法的拥塞窗口增长速率缓慢得多。</p>
+<p>与快重传配合使用的还有快恢复算法，其过程有以下两个要点：</p>
+<p><1>. 当发送方连续收到三个重复确认，就执行“乘法减小”算法，把慢开始门限ssthresh减半。这是为了预防网络发生拥塞。请注意：接下去不执行慢开始算法。</1></p>
+<p><2>. 由于发送方现在认为网络很可能没有发生拥塞，因此与慢开始不同之处是现在不执行慢开始算法（即拥塞窗口cwnd现在不设置为1），而是把cwnd值设置为 慢开始门限ssthresh减半后的数值，然后开始执行拥塞避免算法（“加法增大”），使拥塞窗口缓慢地线性增大。</2></p>
+<p><a href="https://pic002.cnblogs.com/images/2010/125788/2010101123101842.jpg" target="_blank" rel="noopener">TCP conjestio</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://warrenwx.github.io/2018/08/22/TCP-Handshake/" data-id="cjl60u4gn000bvojxdb6ajodw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/08/22/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/22/Sunday-Method-Pattern-Match/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Sunday-Method-Pattern-Match</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/22/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/22/TCP-Handshake/">TCP-Handshake</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/22/Sunday-Method-Pattern-Match/">Sunday-Method-Pattern-Match</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/22/Process-communication/">Process-communication</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/22/Permutation/">Permutation</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 warren<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
