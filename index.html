@@ -85,15 +85,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="what-volatile-means"><a href="#what-volatile-means" class="headerlink" title="what volatile means"></a>what volatile means</h3><p>n. a volatile substance; a substance that changes readily from solid or liquid to a vapor, which means somthing can be changed at anytime.</p>
-<p>###what kind of occasion we need to deal with<br>consider code behind.</p>
+<h3 id="what-kind-of-occasion-we-need-to-deal-with"><a href="#what-kind-of-occasion-we-need-to-deal-with" class="headerlink" title="what kind of occasion we need to deal with"></a>what kind of occasion we need to deal with</h3><p>consider code behind.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">A</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i ++) &#123;</span><br><span class="line">			Thread thread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;							</span><br><span class="line">				<span class="meta">@Override</span></span><br><span class="line">				<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">					<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) &#123;						</span><br><span class="line">						++ number;</span><br><span class="line">						System.out.println(Thread.currentThread().getName() + <span class="string">" get "</span> + number);					</span><br><span class="line">					&#125;											</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">			thread.start();</span><br><span class="line">		&#125;</span><br><span class="line">		Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">		System.out.println(<span class="string">"finally "</span> + number);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>finally, the result of ‘number’ is not predictable, which might be 960, 977 or 999.</p>
-<p>###what volatile can guarantee<br>it keeps every thread get ‘global’ variable with consitent value. one more thing, ++number is not atomic, update number in multi-thread is not safe. add synchronized symbol will make it.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">A</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i ++) &#123;</span><br><span class="line">			Thread thread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;							</span><br><span class="line">				<span class="meta">@Override</span></span><br><span class="line">				<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">					<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) &#123;</span><br><span class="line">						<span class="keyword">synchronized</span> (integerLock) &#123;</span><br><span class="line">							++ number;</span><br><span class="line">							System.out.println(Thread.currentThread().getName() + <span class="string">" get "</span> + number);</span><br><span class="line">						&#125;											</span><br><span class="line">					&#125;											</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">			thread.start();</span><br><span class="line">		&#125;</span><br><span class="line">		Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">		System.out.println(<span class="string">"finally "</span> + number);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="what-volatile-can-guarantee"><a href="#what-volatile-can-guarantee" class="headerlink" title="what volatile can guarantee"></a>what volatile can guarantee</h3><p>it keeps every thread get ‘global’ variable with consitent value. one more thing, ++number is not atomic, update number in multi-thread is not safe. add synchronized symbol will make it.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">A</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i ++) &#123;</span><br><span class="line">			Thread thread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;							</span><br><span class="line">				<span class="meta">@Override</span></span><br><span class="line">				<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">					<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) &#123;</span><br><span class="line">						<span class="keyword">synchronized</span> (integerLock) &#123;</span><br><span class="line">							++ number;</span><br><span class="line">							System.out.println(Thread.currentThread().getName() + <span class="string">" get "</span> + number);</span><br><span class="line">						&#125;											</span><br><span class="line">					&#125;											</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">			thread.start();</span><br><span class="line">		&#125;</span><br><span class="line">		Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">		System.out.println(<span class="string">"finally "</span> + number);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/18/Volatile/" data-id="cjnebhfs800004epv4x6gdwzx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/18/Volatile/" data-id="cjnebmqtl000ac4pvpbj7q317" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/volatile/">volatile.</a></li></ul>
@@ -136,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/TCP-Handshake/" data-id="cjnebfxob000928pvlumso1p1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/TCP-Handshake/" data-id="cjnebmqtj0009c4pvjk4aftqm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -174,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/Sunday-Method-Pattern-Match/" data-id="cjnebfxo9000828pvedrl2t6x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/Sunday-Method-Pattern-Match/" data-id="cjnebmqth0008c4pvnrudf711" class="article-share-link">Share</a>
       
       
     </footer>
@@ -211,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/Process-communication/" data-id="cjnebfxo7000728pvd4zatuw4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/Process-communication/" data-id="cjnebmqtf0007c4pvzu60uyou" class="article-share-link">Share</a>
       
       
     </footer>
@@ -249,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/Permutation/" data-id="cjnebfxo4000628pve9hhtlzp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/Permutation/" data-id="cjnebmqtd0006c4pvjbapa2u4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -299,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/Memory-Layout-C/" data-id="cjnebfxo1000528pvqhyu9j9c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/Memory-Layout-C/" data-id="cjnebmqtb0005c4pvp5p74bnm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -336,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/LinkReverse/" data-id="cjnebfxnz000428pvdtcpwgst" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/LinkReverse/" data-id="cjnebmqt90004c4pv4pvk7c27" class="article-share-link">Share</a>
       
       
     </footer>
@@ -373,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/LCS/" data-id="cjnebfxnv000328pvlaztr5q5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/LCS/" data-id="cjnebmqt60003c4pvhnmk9cap" class="article-share-link">Share</a>
       
       
     </footer>
@@ -416,7 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/i-and-i/" data-id="cjnebfxod000a28pv6lt0n2a1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/i-and-i/" data-id="cjnebmqtq000bc4pvvfovhj3k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -461,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/Dynamic-Programming/" data-id="cjnebfxnr000228pvfzv0o7z1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/Dynamic-Programming/" data-id="cjnebmqt40002c4pv94mrk928" class="article-share-link">Share</a>
       
       
     </footer>
