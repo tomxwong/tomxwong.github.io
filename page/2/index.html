@@ -64,7 +64,127 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">{% block title %} {{ config.title }} - {{ theme.description }} {% endblock %}</section>
+        <section id="main">
+  
+    <article id="post-DeadLoop" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/23/DeadLoop/" class="article-date">
+  <time datetime="2018-08-22T20:41:25.000Z" itemprop="datePublished">2018-08-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/23/DeadLoop/">DeadLoop</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###How to write simple deadloop, check following.</p>
+<p>while(true){}</p>
+<pre><code>.section        __TEXT,__text,regular,pure_instructions
+.macosx_version_min 10, 13
+.globl  _main                   ## -- Begin function main
+.p2align        4, 0x90
+</code></pre><p>_main:                                  ## @main<br>        .cfi_startproc</p>
+<h2 id="BB-0"><a href="#BB-0" class="headerlink" title="BB#0:"></a>BB#0:</h2><pre><code>pushq   %rbp
+</code></pre><p>Lcfi0:<br>        .cfi_def_cfa_offset 16<br>Lcfi1:<br>        .cfi_offset %rbp, -16<br>        movq    %rsp, %rbp<br>Lcfi2:<br>        .cfi_def_cfa_register %rbp<br>        movl    $0, -4(%rbp)<br>LBB0_1:                                 ## =&gt;This Inner Loop Header: Depth=1<br>        jmp     LBB0_1<br>        .cfi_endproc</p>
+<pre><code>## -- End function
+</code></pre><p>As we can see, there is no condition judgement after LBB0_1. Now check this,</p>
+<p>LBB0_1:                                 ## =&gt;This Inner Loop Header: Depth=1<br>        xorl    %eax, %eax<br>        movb    %al, %cl<br>        testb   $1, %cl<br>        jne     LBB0_2<br>        jmp     LBB0_3<br>LBB0_2:                                 ##   in Loop: Header=BB0_1 Depth=1<br>        jmp     LBB0_1<br>LBB0_3:<br>        xorl    %eax, %eax<br>        popq    %rbp<br>        retq<br>        .cfi_endproc<br>LBB0_2 is used to execute next loop, if exit condition meets, jmp LBB0_3 will be executed.</p>
+<p>for(;;){}</p>
+<p>int main(){</p>
+<pre><code>for(int i = 0; i &lt; 10; i++){
+    i += 2;
+}
+return 0;
+</code></pre><p>}</p>
+<pre><code>.section        __TEXT,__text,regular,pure_instructions
+.macosx_version_min 10, 13
+.globl  _main                   ## -- Begin function main
+.p2align        4, 0x90
+</code></pre><p>_main:                                  ## @main<br>        .cfi_startproc</p>
+<h2 id="BB-0-1"><a href="#BB-0-1" class="headerlink" title="BB#0:"></a>BB#0:</h2><pre><code>pushq   %rbp
+</code></pre><p>Lcfi0:<br>        .cfi_def_cfa_offset 16<br>Lcfi1:<br>        .cfi_offset %rbp, -16<br>        movq    %rsp, %rbp<br>Lcfi2:<br>        .cfi_def_cfa_register %rbp<br>        movl    $0, -4(%rbp)<br>        movl    $0, -8(%rbp)<br>LBB0_1:                                 ## =&gt;This Inner Loop Header: Depth=1<br>        cmpl    $10, -8(%rbp)<br>        jge     LBB0_4</p>
+<h2 id="BB-2-in-Loop-Header-BB0-1-Depth-1"><a href="#BB-2-in-Loop-Header-BB0-1-Depth-1" class="headerlink" title="BB#2:                                ##   in Loop: Header=BB0_1 Depth=1"></a>BB#2:                                ##   in Loop: Header=BB0_1 Depth=1</h2><pre><code>movl    -8(%rbp), %eax
+addl    $2, %eax
+movl    %eax, -8(%rbp)
+</code></pre><h2 id="BB-3-in-Loop-Header-BB0-1-Depth-1"><a href="#BB-3-in-Loop-Header-BB0-1-Depth-1" class="headerlink" title="BB#3:                                ##   in Loop: Header=BB0_1 Depth=1"></a>BB#3:                                ##   in Loop: Header=BB0_1 Depth=1</h2><pre><code>movl    -8(%rbp), %eax
+addl    $1, %eax
+movl    %eax, -8(%rbp)
+jmp     LBB0_1
+</code></pre><p>LBB0_4:<br>        xorl    %eax, %eax<br>        popq    %rbp<br>        retq<br>        .cfi_endproc</p>
+<pre><code>## -- End function
+</code></pre><p>Firstly, i is initialized with 0, then condition judgement is executed in LBB0_1, if condition meets, goto LBB0_4, else BB#2 and BB#3 will be executed.</p>
+<p>As wrote before, if condition judgement is not provided, the next step is jmp exit.</p>
+<p>label<br>This is the most basic ways with label, which is common in ASM.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://warrenwx.github.io/2018/08/23/DeadLoop/" data-id="cjned1qd40001yepv3o0r0u3q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Basic-Sorting-Algorithm" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/23/Basic-Sorting-Algorithm/" class="article-date">
+  <time datetime="2018-08-22T20:41:14.000Z" itemprop="datePublished">2018-08-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/23/Basic-Sorting-Algorithm/">Basic-Sorting-Algorithm</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>0.1.2.?2. quicksort</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  input: </span></span><br><span class="line"><span class="comment">          arr:  array for type int *</span></span><br><span class="line"><span class="comment">          low:  index of first element in array</span></span><br><span class="line"><span class="comment">          high: index of last element in arrray</span></span><br><span class="line"><span class="comment">  output:</span></span><br><span class="line"><span class="comment">          arr</span></span><br><span class="line"><span class="comment">  return:</span></span><br><span class="line"><span class="comment">          the last pivotkey index</span></span><br><span class="line"><span class="comment">  prerequisites:</span></span><br><span class="line"><span class="comment">          none </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> pivotkey = arr[low];</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(low &lt; high)&#123;</span><br><span class="line">        <span class="keyword">while</span>(low &lt; high &amp;&amp; arr[high] &gt;= pivotkey) high--;</span><br><span class="line">        temp = arr[low];</span><br><span class="line">        arr[low] = arr[high];</span><br><span class="line">        arr[high] = temp;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(low &lt; high &amp;&amp; arr[low] &lt;= pivotkey) low++;</span><br><span class="line">        temp = arr[low];</span><br><span class="line">        arr[low] = arr[high];</span><br><span class="line">        arr[high] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    arr[low] = pivotkey;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(index = <span class="number">0</span>; index &lt;= <span class="number">5</span>; index++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\t"</span>, arr[index]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> low;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">qsort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(low &lt; high)&#123;</span><br><span class="line">        <span class="keyword">int</span> retIndex = partition(arr, low, high);</span><br><span class="line">        qsort(arr, low, retIndex - <span class="number">1</span>);</span><br><span class="line">        qsort(arr, retIndex + <span class="number">1</span>, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/" data-id="cjned1qcq0000yepvqrwokw23" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+</section>
         
           <aside id="sidebar">
   
