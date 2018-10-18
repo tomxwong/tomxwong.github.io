@@ -62,6 +62,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Volatile" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/18/Volatile/" class="article-date">
+  <time datetime="2018-10-18T06:37:38.000Z" itemprop="datePublished">2018-10-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/18/Volatile/">volatile</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="what-volatile-means"><a href="#what-volatile-means" class="headerlink" title="what volatile means"></a>what volatile means</h3><p>n. a volatile substance; a substance that changes readily from solid or liquid to a vapor, which means somthing can be changed at anytime.</p>
+<p>###what kind of occasion we need to deal with<br>consider code behind.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">A</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i ++) &#123;</span><br><span class="line">			Thread thread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;							</span><br><span class="line">				<span class="meta">@Override</span></span><br><span class="line">				<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">					<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) &#123;						</span><br><span class="line">						++ number;</span><br><span class="line">						System.out.println(Thread.currentThread().getName() + <span class="string">" get "</span> + number);					</span><br><span class="line">					&#125;											</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">			thread.start();</span><br><span class="line">		&#125;</span><br><span class="line">		Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">		System.out.println(<span class="string">"finally "</span> + number);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>finally, the result of ‘number’ is not predictable, which might be 960, 977 or 999.</p>
+<p>###what volatile can guarantee<br>it keeps every thread get ‘global’ variable with consitent value. one more thing, ++number is not atomic, update number in multi-thread is not safe. add synchronized symbol will make it.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">A</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i ++) &#123;</span><br><span class="line">			Thread thread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;							</span><br><span class="line">				<span class="meta">@Override</span></span><br><span class="line">				<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">					<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) &#123;</span><br><span class="line">						<span class="keyword">synchronized</span> (integerLock) &#123;</span><br><span class="line">							++ number;</span><br><span class="line">							System.out.println(Thread.currentThread().getName() + <span class="string">" get "</span> + number);</span><br><span class="line">						&#125;											</span><br><span class="line">					&#125;											</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">			thread.start();</span><br><span class="line">		&#125;</span><br><span class="line">		Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">		System.out.println(<span class="string">"finally "</span> + number);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/18/Volatile/" data-id="cjnebhfs800004epv4x6gdwzx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/volatile/">volatile.</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-TCP-Handshake" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/22/TCP-Handshake/" class="article-date">
@@ -93,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/TCP-Handshake/" data-id="cjncsnx2200096ypvsn5z9tj3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/TCP-Handshake/" data-id="cjnebfxob000928pvlumso1p1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/Sunday-Method-Pattern-Match/" data-id="cjncsnx2000086ypva8gzxf9d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/Sunday-Method-Pattern-Match/" data-id="cjnebfxo9000828pvedrl2t6x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -168,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/Process-communication/" data-id="cjncsnx1z00076ypvcpxo3ixl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/Process-communication/" data-id="cjnebfxo7000728pvd4zatuw4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -206,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/Permutation/" data-id="cjncsnx1x00066ypv5v9iomxf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/Permutation/" data-id="cjnebfxo4000628pve9hhtlzp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -256,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/Memory-Layout-C/" data-id="cjncsnx1v00056ypvi592gl7z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/Memory-Layout-C/" data-id="cjnebfxo1000528pvqhyu9j9c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -293,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/LinkReverse/" data-id="cjncsnx1t00046ypvjy4pujxs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/LinkReverse/" data-id="cjnebfxnz000428pvdtcpwgst" class="article-share-link">Share</a>
       
       
     </footer>
@@ -330,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/LCS/" data-id="cjncsnx1r00036ypvs6huh4u0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/LCS/" data-id="cjnebfxnv000328pvlaztr5q5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -373,7 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/i-and-i/" data-id="cjncsnx24000a6ypv34ivgqgs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/i-and-i/" data-id="cjnebfxod000a28pv6lt0n2a1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -418,81 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/Dynamic-Programming/" data-id="cjncsnx1o00026ypv68iixk2k" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-DeadLoop" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/22/DeadLoop/" class="article-date">
-  <time datetime="2018-08-22T12:41:25.000Z" itemprop="datePublished">2018-08-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/22/DeadLoop/">DeadLoop</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>###How to write simple deadloop, check following.</p>
-<p>while(true){}</p>
-<pre><code>.section        __TEXT,__text,regular,pure_instructions
-.macosx_version_min 10, 13
-.globl  _main                   ## -- Begin function main
-.p2align        4, 0x90
-</code></pre><p>_main:                                  ## @main<br>        .cfi_startproc</p>
-<h2 id="BB-0"><a href="#BB-0" class="headerlink" title="BB#0:"></a>BB#0:</h2><pre><code>pushq   %rbp
-</code></pre><p>Lcfi0:<br>        .cfi_def_cfa_offset 16<br>Lcfi1:<br>        .cfi_offset %rbp, -16<br>        movq    %rsp, %rbp<br>Lcfi2:<br>        .cfi_def_cfa_register %rbp<br>        movl    $0, -4(%rbp)<br>LBB0_1:                                 ## =&gt;This Inner Loop Header: Depth=1<br>        jmp     LBB0_1<br>        .cfi_endproc</p>
-<pre><code>## -- End function
-</code></pre><p>As we can see, there is no condition judgement after LBB0_1. Now check this,</p>
-<p>LBB0_1:                                 ## =&gt;This Inner Loop Header: Depth=1<br>        xorl    %eax, %eax<br>        movb    %al, %cl<br>        testb   $1, %cl<br>        jne     LBB0_2<br>        jmp     LBB0_3<br>LBB0_2:                                 ##   in Loop: Header=BB0_1 Depth=1<br>        jmp     LBB0_1<br>LBB0_3:<br>        xorl    %eax, %eax<br>        popq    %rbp<br>        retq<br>        .cfi_endproc<br>LBB0_2 is used to execute next loop, if exit condition meets, jmp LBB0_3 will be executed.</p>
-<p>for(;;){}</p>
-<p>int main(){</p>
-<pre><code>for(int i = 0; i &lt; 10; i++){
-    i += 2;
-}
-return 0;
-</code></pre><p>}</p>
-<pre><code>.section        __TEXT,__text,regular,pure_instructions
-.macosx_version_min 10, 13
-.globl  _main                   ## -- Begin function main
-.p2align        4, 0x90
-</code></pre><p>_main:                                  ## @main<br>        .cfi_startproc</p>
-<h2 id="BB-0-1"><a href="#BB-0-1" class="headerlink" title="BB#0:"></a>BB#0:</h2><pre><code>pushq   %rbp
-</code></pre><p>Lcfi0:<br>        .cfi_def_cfa_offset 16<br>Lcfi1:<br>        .cfi_offset %rbp, -16<br>        movq    %rsp, %rbp<br>Lcfi2:<br>        .cfi_def_cfa_register %rbp<br>        movl    $0, -4(%rbp)<br>        movl    $0, -8(%rbp)<br>LBB0_1:                                 ## =&gt;This Inner Loop Header: Depth=1<br>        cmpl    $10, -8(%rbp)<br>        jge     LBB0_4</p>
-<h2 id="BB-2-in-Loop-Header-BB0-1-Depth-1"><a href="#BB-2-in-Loop-Header-BB0-1-Depth-1" class="headerlink" title="BB#2:                                ##   in Loop: Header=BB0_1 Depth=1"></a>BB#2:                                ##   in Loop: Header=BB0_1 Depth=1</h2><pre><code>movl    -8(%rbp), %eax
-addl    $2, %eax
-movl    %eax, -8(%rbp)
-</code></pre><h2 id="BB-3-in-Loop-Header-BB0-1-Depth-1"><a href="#BB-3-in-Loop-Header-BB0-1-Depth-1" class="headerlink" title="BB#3:                                ##   in Loop: Header=BB0_1 Depth=1"></a>BB#3:                                ##   in Loop: Header=BB0_1 Depth=1</h2><pre><code>movl    -8(%rbp), %eax
-addl    $1, %eax
-movl    %eax, -8(%rbp)
-jmp     LBB0_1
-</code></pre><p>LBB0_4:<br>        xorl    %eax, %eax<br>        popq    %rbp<br>        retq<br>        .cfi_endproc</p>
-<pre><code>## -- End function
-</code></pre><p>Firstly, i is initialized with 0, then condition judgement is executed in LBB0_1, if condition meets, goto LBB0_4, else BB#2 and BB#3 will be executed.</p>
-<p>As wrote before, if condition judgement is not provided, the next step is jmp exit.</p>
-<p>label<br>This is the most basic ways with label, which is common in ASM.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/22/DeadLoop/" data-id="cjncsnx1i00016ypvn8b1pcdh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/22/Dynamic-Programming/" data-id="cjnebfxnr000228pvfzv0o7z1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -517,15 +486,29 @@ jmp     LBB0_1
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/volatile/">volatile.</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/volatile/" style="font-size: 10px;">volatile.</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -536,6 +519,10 @@ jmp     LBB0_1
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/10/18/Volatile/">volatile</a>
+          </li>
         
           <li>
             <a href="/2018/08/22/TCP-Handshake/">TCP-Handshake</a>
@@ -551,10 +538,6 @@ jmp     LBB0_1
         
           <li>
             <a href="/2018/08/22/Permutation/">Permutation</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/22/Memory-Layout-C/">Memory-Layout-C</a>
           </li>
         
       </ul>
