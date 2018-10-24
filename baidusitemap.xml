@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://warrenwx.github.io/2018/10/25/Java-objectsize/</loc>
+    <loc>https://warrenwx.github.io/2018/10/25/java-objectsize/</loc>
     <lastmod>2018-10-24T10:59:14.578Z</lastmod>
   </url>  <url>
     <loc>https://warrenwx.github.io/2018/10/18/Volatile/</loc>
     <lastmod>2018-10-18T08:26:09.529Z</lastmod>
   </url>  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Process-communication/</loc>
+    <loc>https://warrenwx.github.io/2018/08/23/LCS/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
     <loc>https://warrenwx.github.io/2018/08/23/LinkReverse/</loc>
@@ -19,16 +19,16 @@
     <loc>https://warrenwx.github.io/2018/08/23/Permutation/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/LCS/</loc>
+    <loc>https://warrenwx.github.io/2018/08/23/DeadLoop/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/</loc>
+    <loc>https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
     <loc>https://warrenwx.github.io/2018/08/23/TCP-Handshake/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/</loc>
+    <loc>https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
     <loc>https://warrenwx.github.io/2018/08/23/i-and-i/</loc>
@@ -37,7 +37,7 @@
     <loc>https://warrenwx.github.io/2018/08/23/Dynamic-Programming/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/DeadLoop/</loc>
+    <loc>https://warrenwx.github.io/2018/08/23/Process-communication/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>
 </urlset>

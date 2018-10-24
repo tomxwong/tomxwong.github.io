@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[java-objectsize]]></title>
-    <url>%2F2018%2F10%2F25%2FJava-objectsize%2F</url>
+    <url>%2F2018%2F10%2F25%2Fjava-objectsize%2F</url>
     <content type="text"><![CDATA[One simple way to get object size1234567&lt;dependency&gt; &lt;groupId&gt;com.carrotsearch&lt;/groupId&gt; &lt;artifactId&gt;java-sizeof&lt;/artifactId&gt; &lt;version&gt;0.0.5&lt;/version&gt;&lt;/dependency&gt;System.out.println(RamUsageEstimator.sizeOf(new String("hello world!")));]]></content>
       <tags>
         <tag>java object size sizeof</tag>
