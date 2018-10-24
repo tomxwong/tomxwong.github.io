@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[java-objectsize]]></title>
+    <url>%2F2018%2F10%2F25%2FJava-objectsize%2F</url>
+    <content type="text"><![CDATA[One simple way to get object size1234567&lt;dependency&gt; &lt;groupId&gt;com.carrotsearch&lt;/groupId&gt; &lt;artifactId&gt;java-sizeof&lt;/artifactId&gt; &lt;version&gt;0.0.5&lt;/version&gt;&lt;/dependency&gt;System.out.println(RamUsageEstimator.sizeOf(new String("hello world!")));]]></content>
+      <tags>
+        <tag>java object size sizeof</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[volatile]]></title>
     <url>%2F2018%2F10%2F18%2FVolatile%2F</url>
     <content type="text"><![CDATA[what volatile meansn. a volatile substance; a substance that changes readily from solid or liquid to a vapor, which means somthing can be changed at anytime. what kind of occasion we need to deal withconsider code behind. 12345678910111213141516public void A() throws InterruptedException &#123; for(int i = 0; i &lt; 50; i ++) &#123; Thread thread = new Thread(new Runnable() &#123; @Override public void run() &#123; for(int i = 0; i &lt; 2; i++) &#123; ++ number; System.out.println(Thread.currentThread().getName() + " get " + number); &#125; &#125; &#125;); thread.start(); &#125; Thread.sleep(3000); System.out.println("finally " + number); &#125; finally, the result of ‘number’ is not predictable, which might be 960, 977 or 999. what volatile can guaranteeit keeps every thread get ‘global’ variable with consitent value. one more thing, ++number is not atomic, update number in multi-thread is not safe. add synchronized symbol will make it.123456789101112131415161718public void A() throws InterruptedException &#123; for(int i = 0; i &lt; 50; i ++) &#123; Thread thread = new Thread(new Runnable() &#123; @Override public void run() &#123; for(int i = 0; i &lt; 2; i++) &#123; synchronized (integerLock) &#123; ++ number; System.out.println(Thread.currentThread().getName() + " get " + number); &#125; &#125; &#125; &#125;); thread.start(); &#125; Thread.sleep(3000); System.out.println("finally " + number); &#125;]]></content>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://warrenwx.github.io/2018/10/25/Java-objectsize/</loc>
+    
+    <lastmod>2018-10-24T10:59:14.578Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://warrenwx.github.io/google14b71a123b4e6c72.html</loc>
     
     <lastmod>2018-10-18T09:31:16.254Z</lastmod>
@@ -16,14 +23,7 @@
   </url>
   
   <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Dynamic-Programming/</loc>
-    
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/LCS/</loc>
+    <loc>https://warrenwx.github.io/2018/08/23/Process-communication/</loc>
     
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
     
@@ -44,28 +44,14 @@
   </url>
   
   <url>
-    <loc>https://warrenwx.github.io/2018/08/23/DeadLoop/</loc>
+    <loc>https://warrenwx.github.io/2018/08/23/Permutation/</loc>
     
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Process-communication/</loc>
-    
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/</loc>
-    
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/TCP-Handshake/</loc>
+    <loc>https://warrenwx.github.io/2018/08/23/LCS/</loc>
     
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
     
@@ -79,6 +65,20 @@
   </url>
   
   <url>
+    <loc>https://warrenwx.github.io/2018/08/23/TCP-Handshake/</loc>
+    
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/</loc>
+    
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://warrenwx.github.io/2018/08/23/i-and-i/</loc>
     
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
@@ -86,7 +86,14 @@
   </url>
   
   <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Permutation/</loc>
+    <loc>https://warrenwx.github.io/2018/08/23/Dynamic-Programming/</loc>
+    
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/DeadLoop/</loc>
     
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
     
