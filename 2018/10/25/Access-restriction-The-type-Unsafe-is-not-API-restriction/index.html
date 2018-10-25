@@ -5,19 +5,24 @@
   
 
   
-  <title>LCS | Intconp</title>
+  <title>Access restriction: The type Unsafe is not API (restriction | Intconp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###LCS Problem 1234567891011121314151617181920212223242526int getLcs(string a, string b) &amp;#123;	int lengthA = a.length() + 1, lengthB = b.length() + 1;	vector&amp;lt;vector&amp;lt;char&amp;gt; &amp;gt; matrix;	matrix">
+  <meta name="description" content="Access restriction: The type xxx is not API (restrictionGenerally, we can see this in eclipse, as visit a non-public API is forbidden, such as sun.misc.Unsafe. Here I want to cancel this check tempora">
+<meta name="keywords" content="Access restriction The type Unsafe is not API (restriction.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LCS">
-<meta property="og:url" content="https://warrenwx.github.io/2018/08/23/LCS/index.html">
+<meta property="og:title" content="Access restriction: The type Unsafe is not API (restriction">
+<meta property="og:url" content="https://warrenwx.github.io/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/index.html">
 <meta property="og:site_name" content="Intconp">
-<meta property="og:description" content="###LCS Problem 1234567891011121314151617181920212223242526int getLcs(string a, string b) &amp;#123;	int lengthA = a.length() + 1, lengthB = b.length() + 1;	vector&amp;lt;vector&amp;lt;char&amp;gt; &amp;gt; matrix;	matrix">
+<meta property="og:description" content="Access restriction: The type xxx is not API (restrictionGenerally, we can see this in eclipse, as visit a non-public API is forbidden, such as sun.misc.Unsafe. Here I want to cancel this check tempora">
 <meta property="og:locale" content="En">
-<meta property="og:updated_time" content="2018-08-23T11:42:53.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025153958.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025154023.png">
+<meta property="og:image" content="https://github.com/warrenwx/warrenwx_hexo/blob/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025154219.png?raw=true">
+<meta property="og:updated_time" content="2018-10-25T11:53:44.751Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LCS">
-<meta name="twitter:description" content="###LCS Problem 1234567891011121314151617181920212223242526int getLcs(string a, string b) &amp;#123;	int lengthA = a.length() + 1, lengthB = b.length() + 1;	vector&amp;lt;vector&amp;lt;char&amp;gt; &amp;gt; matrix;	matrix">
+<meta name="twitter:title" content="Access restriction: The type Unsafe is not API (restriction">
+<meta name="twitter:description" content="Access restriction: The type xxx is not API (restrictionGenerally, we can see this in eclipse, as visit a non-public API is forbidden, such as sun.misc.Unsafe. Here I want to cancel this check tempora">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025153958.png">
   
     <link rel="alternate" href="/atom.xml" title="Intconp" type="application/atom+xml">
   
@@ -68,10 +73,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-LCS" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Access-restriction-The-type-Unsafe-is-not-API-restriction" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/23/LCS/" class="article-date">
-  <time datetime="2018-08-22T20:41:48.000Z" itemprop="datePublished">2018-08-22</time>
+    <a href="/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/" class="article-date">
+  <time datetime="2018-10-25T15:28:23.000Z" itemprop="datePublished">2018-10-25</time>
 </a>
     
   </div>
@@ -82,7 +87,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      LCS
+      Access restriction: The type Unsafe is not API (restriction
     </h1>
   
 
@@ -90,33 +95,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###LCS Problem</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getLcs</span><span class="params">(string a, string b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> lengthA = a.length() + <span class="number">1</span>, lengthB = b.length() + <span class="number">1</span>;</span><br><span class="line">	vector&lt;vector&lt;<span class="keyword">char</span>&gt; &gt; matrix;</span><br><span class="line">	matrix.resize((lengthA));</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lengthA; ++i) &#123;</span><br><span class="line">		matrix[i].resize(lengthB);</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="keyword">int</span> max_pos = -<span class="number">1</span>, max_val = -<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; lengthA; ++i) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; lengthB; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span> (a[i - <span class="number">1</span>] == b[j - <span class="number">1</span>]) &#123;</span><br><span class="line">				matrix[i][j] = matrix[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span> (max_val &lt; matrix[i][j]) &#123;</span><br><span class="line">					max_val = matrix[i][j];</span><br><span class="line">					max_pos = i;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> </span><br><span class="line">			&#123;</span><br><span class="line">				matrix[i][j] = max(matrix[i - <span class="number">1</span>][j], matrix[i][j - <span class="number">1</span>]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> max_pos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="Access-restriction-The-type-xxx-is-not-API-restriction"><a href="#Access-restriction-The-type-xxx-is-not-API-restriction" class="headerlink" title="Access restriction: The type xxx is not API (restriction"></a>Access restriction: The type xxx is not API (restriction</h3><p>Generally, we can see this in eclipse, as visit a non-public API is forbidden, such as sun.misc.Unsafe. Here I want to cancel this check temporarily.<br>steps as follow:</p>
+<h4 id="step1-find-project-properties-and-click-on-‘build-path’"><a href="#step1-find-project-properties-and-click-on-‘build-path’" class="headerlink" title="step1. find project properties, and click on ‘build path’"></a>step1. find project properties, and click on ‘build path’</h4><p><a href="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025153958.png" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025153958.png" alt=""></a></p>
+<h4 id="step2-double-click-‘Access-rules’-or-just-edit-it"><a href="#step2-double-click-‘Access-rules’-or-just-edit-it" class="headerlink" title="step2. double click ‘Access rules’ or just edit it"></a>step2. double click ‘Access rules’ or just edit it</h4><p><a href="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025154023.png" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025154023.png" alt=""></a></p>
+<h4 id="step3-add-a-‘rule’-fill-blanks-like-this-project-rebuild"><a href="#step3-add-a-‘rule’-fill-blanks-like-this-project-rebuild" class="headerlink" title="step3. add a ‘rule’, fill blanks like this. project rebuild."></a>step3. add a ‘rule’, fill blanks like this. project rebuild.</h4><p><a href="https://github.com/warrenwx/warrenwx_hexo/blob/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025154219.png?raw=true" target="_blank" rel="noopener"><img src="https://github.com/warrenwx/warrenwx_hexo/blob/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025154219.png?raw=true" alt=""></a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/LCS/" data-id="cjnoj3mc0000356pvaz4rzcjd" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/" data-id="cjnoj4na300005zpvz3b05l4y" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction The type Unsafe is not API (restriction.</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2018/08/23/LinkReverse/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          LinkReverse
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/08/23/i-and-i/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/10/25/java-objectsize/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">i-and-i</div>
+      <div class="article-nav-title">java-objectsize</div>
     </a>
   
 </nav>

@@ -66,6 +66,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Access-restriction-The-type-Unsafe-is-not-API-restriction" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/" class="article-date">
+  <time datetime="2018-10-25T15:28:23.000Z" itemprop="datePublished">2018-10-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction: The type Unsafe is not API (restriction</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Access-restriction-The-type-xxx-is-not-API-restriction"><a href="#Access-restriction-The-type-xxx-is-not-API-restriction" class="headerlink" title="Access restriction: The type xxx is not API (restriction"></a>Access restriction: The type xxx is not API (restriction</h3><p>Generally, we can see this in eclipse, as visit a non-public API is forbidden, such as sun.misc.Unsafe. Here I want to cancel this check temporarily.<br>steps as follow:</p>
+<h4 id="step1-find-project-properties-and-click-on-‘build-path’"><a href="#step1-find-project-properties-and-click-on-‘build-path’" class="headerlink" title="step1. find project properties, and click on ‘build path’"></a>step1. find project properties, and click on ‘build path’</h4><p><a href="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025153958.png" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025153958.png" alt=""></a></p>
+<h4 id="step2-double-click-‘Access-rules’-or-just-edit-it"><a href="#step2-double-click-‘Access-rules’-or-just-edit-it" class="headerlink" title="step2. double click ‘Access rules’ or just edit it"></a>step2. double click ‘Access rules’ or just edit it</h4><p><a href="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025154023.png" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025154023.png" alt=""></a></p>
+<h4 id="step3-add-a-‘rule’-fill-blanks-like-this-project-rebuild"><a href="#step3-add-a-‘rule’-fill-blanks-like-this-project-rebuild" class="headerlink" title="step3. add a ‘rule’, fill blanks like this. project rebuild."></a>step3. add a ‘rule’, fill blanks like this. project rebuild.</h4><p><a href="https://github.com/warrenwx/warrenwx_hexo/blob/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025154219.png?raw=true" target="_blank" rel="noopener"><img src="https://github.com/warrenwx/warrenwx_hexo/blob/master/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025154219.png?raw=true" alt=""></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://warrenwx.github.io/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/" data-id="cjnoj4na300005zpvz3b05l4y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction The type Unsafe is not API (restriction.</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-java-objectsize" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/25/java-objectsize/" class="article-date">
@@ -93,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/10/25/java-objectsize/" data-id="cjnn2pzcu000enzpvprnzix3w" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/25/java-objectsize/" data-id="cjnoj3mge000b56pv1lrd20pa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-object-size-sizeof/">java object size sizeof</a></li></ul>
@@ -127,19 +169,86 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="what-volatile-means"><a href="#what-volatile-means" class="headerlink" title="what volatile means"></a>what volatile means</h3><p>n. a volatile substance; a substance that changes readily from solid or liquid to a vapor, which means somthing can be changed at anytime.</p>
-<h3 id="what-kind-of-occasion-we-need-to-deal-with"><a href="#what-kind-of-occasion-we-need-to-deal-with" class="headerlink" title="what kind of occasion we need to deal with"></a>what kind of occasion we need to deal with</h3><p>consider code behind.</p>
+        <h3 id="what-kind-of-occasion-we-need-to-deal-with"><a href="#what-kind-of-occasion-we-need-to-deal-with" class="headerlink" title="what kind of occasion we need to deal with"></a>what kind of occasion we need to deal with</h3><p>consider code behind.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">A</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i ++) &#123;</span><br><span class="line">			Thread thread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;							</span><br><span class="line">				<span class="meta">@Override</span></span><br><span class="line">				<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">					<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) &#123;						</span><br><span class="line">						++ number;</span><br><span class="line">						System.out.println(Thread.currentThread().getName() + <span class="string">" get "</span> + number);					</span><br><span class="line">					&#125;											</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">			thread.start();</span><br><span class="line">		&#125;</span><br><span class="line">		Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">		System.out.println(<span class="string">"finally "</span> + number);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>finally, the result of ‘number’ is not predictable, which might be 960, 977 or 999.</p>
 <h3 id="what-volatile-can-guarantee"><a href="#what-volatile-can-guarantee" class="headerlink" title="what volatile can guarantee"></a>what volatile can guarantee</h3><p>it keeps every thread get ‘global’ variable with consitent value. one more thing, ++number is not atomic, update number in multi-thread is not safe. add synchronized symbol will make it.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">A</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i ++) &#123;</span><br><span class="line">			Thread thread = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;							</span><br><span class="line">				<span class="meta">@Override</span></span><br><span class="line">				<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">					<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) &#123;</span><br><span class="line">						<span class="keyword">synchronized</span> (integerLock) &#123;</span><br><span class="line">							++ number;</span><br><span class="line">							System.out.println(Thread.currentThread().getName() + <span class="string">" get "</span> + number);</span><br><span class="line">						&#125;											</span><br><span class="line">					&#125;											</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">			thread.start();</span><br><span class="line">		&#125;</span><br><span class="line">		Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">		System.out.println(<span class="string">"finally "</span> + number);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>so, synchronized can be a useable way in this occasion. compared to Optimistic Lock, synchronized cost too much, as it is a kind of Pessimistic Lock. </p>
+<h3 id="what-volatile-means"><a href="#what-volatile-means" class="headerlink" title="what volatile means"></a>what volatile means</h3><p>n. a volatile substance; a substance that changes readily from solid or liquid to a vapor, which means somthing can be changed at anytime.</p>
+<p>As statement ‘lock’ will have bus or cache(cpu level) all to itself(core), which will influence multi-core performance. cas + volatile is a kind of Optimistic Lock, code follows.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span>:     CASTest.java</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>:   TODO</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span></span></span><br><span class="line"><span class="comment">         xiang_wang</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span></span></span><br><span class="line"><span class="comment">        V1.0  </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>           2018年10月25日 下午3:13:08 </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.ExecutorService;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.Executors;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sun.misc.Unsafe;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> xiang_wang</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CASTest</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">int</span> value = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> value;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">increaseAndGet</span><span class="params">()</span> <span class="keyword">throws</span> NoSuchFieldException, SecurityException, InterruptedException </span>&#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">int</span> next = value + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span>(innerCas(value, next)) &#123;</span><br><span class="line">				<span class="keyword">return</span> next;</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				System.out.println(Thread.currentThread().getName() + <span class="string">" wait."</span>);</span><br><span class="line">				Thread.sleep(<span class="number">100</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">innerCas</span><span class="params">(<span class="keyword">int</span> before, <span class="keyword">int</span> after)</span> <span class="keyword">throws</span> NoSuchFieldException, SecurityException </span>&#123;</span><br><span class="line">		Unsafe unsafe = getUnsafe();</span><br><span class="line">		<span class="keyword">return</span> unsafe.compareAndSwapInt(<span class="keyword">this</span>, unsafe.objectFieldOffset(CASTest.class.getDeclaredField(<span class="string">"value"</span>)), before, after);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Unsafe <span class="title">getUnsafe</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Field singletonInstanceField = Unsafe.class.getDeclaredField(<span class="string">"theUnsafe"</span>);</span><br><span class="line">            singletonInstanceField.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">            <span class="keyword">return</span> (Unsafe) singletonInstanceField.get(<span class="keyword">null</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NoSuchFieldException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/** </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Title</span>:        main </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Description</span>:  TODO </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span>:        <span class="doctag">@param</span> args    </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span>:       void    </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span>        xiang_wang</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Date</span>          2018年10月25日 下午3:13:09 </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> SecurityException </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> NoSuchFieldException </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> InterruptedException </span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		CASTest casTest = <span class="keyword">new</span> CASTest();		</span><br><span class="line">		ExecutorService es = Executors.newFixedThreadPool(<span class="number">10</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++ i) &#123;</span><br><span class="line">			es.execute(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">				</span><br><span class="line">				<span class="meta">@Override</span></span><br><span class="line">				<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">					</span><br><span class="line">					<span class="keyword">try</span> &#123;</span><br><span class="line">						<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">							System.out.println(Thread.currentThread().getName() + <span class="string">":"</span> + casTest.increaseAndGet());</span><br><span class="line">							Thread.sleep(<span class="number">100</span>);</span><br><span class="line">						&#125;					</span><br><span class="line">					&#125; <span class="keyword">catch</span> (NoSuchFieldException e) &#123;</span><br><span class="line">						<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">						e.printStackTrace();</span><br><span class="line">					&#125; <span class="keyword">catch</span> (SecurityException e) &#123;</span><br><span class="line">						<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">						e.printStackTrace();</span><br><span class="line">					&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">						<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">						e.printStackTrace();</span><br><span class="line">					&#125;				</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Conclusion, the method is reliable. but I am more interested in the parameters in this program. ‘Thread.sleep(100)’ statement may influence program performance, At least that’s what I believed when I wrote the program.<br>let’s test it. In my opinion, the first statement will make increaseAndGet faster and the second will make thread competition more fiercely.</p>
+<p>when interval of retry time decrease, and competition between threads, repetition will occur, as value may have been revised by other threads.<br>consider this two statements:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> next = value + <span class="number">1</span>;	<span class="comment">// statement 1</span></span><br><span class="line"><span class="keyword">if</span>(innerCas(value, next)) &#123;	<span class="comment">// statement 2</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>In thread-1, value is 10, after statement 1, next is 11</li>
+<li>In thread-2, value changes from 10 to 11.</li>
+<li>In thread-1, statement 2 executes, value = 11, next = 11, uhuhuh</li>
+</ol>
+<p>fix bug:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> before = value;	<span class="comment">// save value for thread-x</span></span><br><span class="line"><span class="keyword">int</span> next = before + <span class="number">1</span>; <span class="comment">// save update value to thread-x</span></span><br><span class="line"><span class="keyword">if</span>(innerCas(before, next)) &#123;</span><br><span class="line">	<span class="keyword">return</span> next;</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">xxx</span><br></pre></td></tr></table></figure></p>
+<p>experiment result and analysis:</p>
+<table>
+<thead>
+<tr>
+<th>retry/wait</th>
+<th>50</th>
+<th>100</th>
+<th>200</th>
+<th>500</th>
+<th>1000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>50</td>
+<td>479/7422</td>
+<td>50/10253</td>
+<td>22/20074</td>
+<td>22/49760</td>
+<td>18/99256</td>
+</tr>
+<tr>
+<td>100</td>
+<td>60/5609</td>
+<td>496/14968</td>
+<td>40/20349</td>
+<td>13/49951</td>
+<td>23/100053</td>
+</tr>
+<tr>
+<td>200</td>
+<td>33/5698</td>
+<td>103/12056</td>
+<td>379/27471</td>
+<td>17/50160</td>
+<td>28/100057</td>
+</tr>
+<tr>
+<td>500</td>
+<td>21/6054</td>
+<td>47/12355</td>
+<td>18/20849</td>
+<td>495/74570</td>
+<td>59/102554</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>18/6810</td>
+<td>18/11759</td>
+<td>23/22253</td>
+<td>107/60574</td>
+<td>591/159076</td>
+</tr>
+</tbody>
+</table>
+<p>when wait time is as short as possible, retry time influence conflict time significantly. the lower retry time is, the more times thread try to update ‘value’.<br>when wait time is long enough, the times become reverse related. retry and wait range from 50 to 1000 has no significant effect to total execution time, which is main related to wait time.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/10/18/Volatile/" data-id="cjnn2pzcd000bnzpvwxedpk7p" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/18/Volatile/" data-id="cjnoj3mdj000856pvee085fvd" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/volatile/">volatile.</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/volatile-synchronized-java-cas/">volatile, synchronized, java, cas.</a></li></ul>
 
     </footer>
   </div>
@@ -179,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/TCP-Handshake/" data-id="cjnn2pzbr000anzpvyghc60lq" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/TCP-Handshake/" data-id="cjnoj3mgq000c56pvou63ohrq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/" data-id="cjnn2pzbn0009nzpvu2rnqyhm" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/" data-id="cjnoj3mh3000g56pv9vfbsyap" class="article-share-link">Share</a>
       
       
     </footer>
@@ -254,7 +363,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Process-communication/" data-id="cjnn2pzbj0008nzpvhw4ajoxm" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Process-communication/" data-id="cjnoj3mdo000956pvjao0ui5n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -292,7 +401,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Permutation/" data-id="cjnn2pzbg0007nzpv22qtoy54" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Permutation/" data-id="cjnoj3md7000756pve02syf2e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -342,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Memory-Layout-C/" data-id="cjnn2pzbd0006nzpv0dgnnpzr" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Memory-Layout-C/" data-id="cjnoj3mcv000656pvstggmf4j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -379,7 +488,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/LinkReverse/" data-id="cjnn2pzbb0005nzpvutahazzi" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/LinkReverse/" data-id="cjnoj3mbi000256pvxhflih7l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -416,50 +525,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/LCS/" data-id="cjnn2pzb80004nzpvvnrslfrz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-i-and-i" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/23/i-and-i/" class="article-date">
-  <time datetime="2018-08-22T20:41:41.000Z" itemprop="datePublished">2018-08-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/23/i-and-i/">i-and-i</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Generally, we use operator ++ to increase variable, especially in loop.<br>raw datatype situation</p>
-<p>We can using ++i and i++ equally. Translating the two command into assembly language, firstly i++, a = i++;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">00B61AC3  mov         eax,dword ptr [i]  </span><br><span class="line">00B61AC6  mov         dword ptr [a],eax  </span><br><span class="line">00B61AC9  mov         ecx,dword ptr [i]  </span><br><span class="line">00B61ACC  add         ecx,1  </span><br><span class="line">00B61ACF  mov         dword ptr [i],ecx</span><br><span class="line">++i can be expressed as follow, b = ++i;  </span><br><span class="line"></span><br><span class="line">00B61AD2  mov         eax,dword ptr [i]  </span><br><span class="line">00B61AD5  add         eax,1  </span><br><span class="line">00B61AD8  mov         dword ptr [i],eax  </span><br><span class="line">00B61ADB  mov         ecx,dword ptr [i]  </span><br><span class="line">00B61ADE  mov         dword ptr [b],ecx</span><br></pre></td></tr></table></figure>
-<p>Obviously, they cost time equally.</p>
-<p>Now, we consider the other situation.<br>user-defined datatype situation</p>
-<p>Considering class INTEGER,  </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">INTEGER</span>&#123;</span></span><br><span class="line">	T value;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		INTEGER(T intVal)&#123;</span><br><span class="line">			value = intVal;</span><br><span class="line">		&#125;</span><br><span class="line">		INTEGER()&#123;</span><br><span class="line">			value = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		INTEGER&amp; <span class="keyword">operator</span> ++()&#123;</span><br><span class="line">			value += <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		INTEGER <span class="keyword">operator</span> ++(<span class="keyword">int</span>)&#123;</span><br><span class="line">			<span class="function">INTEGER <span class="title">tempInteger</span><span class="params">(value)</span></span>;</span><br><span class="line">			value ++;</span><br><span class="line">			<span class="keyword">return</span> tempInteger;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">print_val</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; hex &lt;&lt; <span class="string">"0x"</span> &lt;&lt; value &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/i-and-i/" data-id="cjnn2pzcg000cnzpvq2b15erg" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/LCS/" data-id="cjnoj3mc0000356pvaz4rzcjd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -487,7 +553,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-object-size-sizeof/">java object size sizeof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/volatile/">volatile.</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction The type Unsafe is not API (restriction.</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-object-size-sizeof/">java object size sizeof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/volatile-synchronized-java-cas/">volatile, synchronized, java, cas.</a></li></ul>
     </div>
   </div>
 
@@ -497,7 +563,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/java-object-size-sizeof/" style="font-size: 10px;">java object size sizeof</a> <a href="/tags/volatile/" style="font-size: 10px;">volatile.</a>
+      <a href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/" style="font-size: 10px;">Access restriction The type Unsafe is not API (restriction.</a> <a href="/tags/java-object-size-sizeof/" style="font-size: 10px;">java object size sizeof</a> <a href="/tags/volatile-synchronized-java-cas/" style="font-size: 10px;">volatile, synchronized, java, cas.</a>
     </div>
   </div>
 
@@ -519,6 +585,10 @@
       <ul>
         
           <li>
+            <a href="/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction: The type Unsafe is not API (restriction</a>
+          </li>
+        
+          <li>
             <a href="/2018/10/25/java-objectsize/">java-objectsize</a>
           </li>
         
@@ -532,10 +602,6 @@
         
           <li>
             <a href="/2018/08/23/Sunday-Method-Pattern-Match/">Sunday-Method-Pattern-Match</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/23/Process-communication/">Process-communication</a>
           </li>
         
       </ul>
