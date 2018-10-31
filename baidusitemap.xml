@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://warrenwx.github.io/2018/10/31/ios11-ppt/</loc>
+    <lastmod>2018-10-31T02:10:14.148Z</lastmod>
+  </url>  <url>
     <loc>https://warrenwx.github.io/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/</loc>
     <lastmod>2018-10-25T11:53:44.751Z</lastmod>
   </url>  <url>
@@ -10,10 +13,7 @@
     <loc>https://warrenwx.github.io/2018/10/25/java-objectsize/</loc>
     <lastmod>2018-10-24T10:59:14.578Z</lastmod>
   </url>  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/</loc>
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-  </url>  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Memory-Layout-C/</loc>
+    <loc>https://warrenwx.github.io/2018/08/23/TCP-Handshake/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
     <loc>https://warrenwx.github.io/2018/08/23/Permutation/</loc>
@@ -22,22 +22,25 @@
     <loc>https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Dynamic-Programming/</loc>
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-  </url>  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/TCP-Handshake/</loc>
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-  </url>  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/DeadLoop/</loc>
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-  </url>  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/i-and-i/</loc>
+    <loc>https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
     <loc>https://warrenwx.github.io/2018/08/23/LCS/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/Dynamic-Programming/</loc>
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+  </url>  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/i-and-i/</loc>
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+  </url>  <url>
     <loc>https://warrenwx.github.io/2018/08/23/LinkReverse/</loc>
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+  </url>  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/DeadLoop/</loc>
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+  </url>  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/Memory-Layout-C/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
     <loc>https://warrenwx.github.io/2018/08/23/Process-communication/</loc>

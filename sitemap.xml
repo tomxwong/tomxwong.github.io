@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://warrenwx.github.io/2018/10/31/ios11-ppt/</loc>
+    
+    <lastmod>2018-10-31T02:10:14.148Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://warrenwx.github.io/ios/index.html</loc>
     
     <lastmod>2018-10-31T01:37:52.901Z</lastmod>
@@ -37,14 +44,7 @@
   </url>
   
   <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/</loc>
-    
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Memory-Layout-C/</loc>
+    <loc>https://warrenwx.github.io/2018/08/23/TCP-Handshake/</loc>
     
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
     
@@ -65,28 +65,7 @@
   </url>
   
   <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Dynamic-Programming/</loc>
-    
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/TCP-Handshake/</loc>
-    
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/DeadLoop/</loc>
-    
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/i-and-i/</loc>
+    <loc>https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/</loc>
     
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
     
@@ -100,7 +79,35 @@
   </url>
   
   <url>
+    <loc>https://warrenwx.github.io/2018/08/23/Dynamic-Programming/</loc>
+    
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/i-and-i/</loc>
+    
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://warrenwx.github.io/2018/08/23/LinkReverse/</loc>
+    
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/DeadLoop/</loc>
+    
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/Memory-Layout-C/</loc>
     
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
     
