@@ -5,19 +5,16 @@
   
 
   
-  <title>Memory-Layout-C | Intconp</title>
+  <title>ios | Intconp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#Memory-layout-of-variable-in-C-program  As you know, variable in C can be classified info local variable, global variable. Local variable is stored in Stack, memory allocated with malloc/alloc locate">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Memory-Layout-C">
-<meta property="og:url" content="https://warrenwx.github.io/2018/08/23/Memory-Layout-C/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="ios">
+<meta property="og:url" content="https://warrenwx.github.io/ios/index.html">
 <meta property="og:site_name" content="Intconp">
-<meta property="og:description" content="#Memory-layout-of-variable-in-C-program  As you know, variable in C can be classified info local variable, global variable. Local variable is stored in Stack, memory allocated with malloc/alloc locate">
 <meta property="og:locale" content="En">
-<meta property="og:updated_time" content="2018-08-23T11:42:53.000Z">
+<meta property="og:updated_time" content="2018-10-31T01:37:52.901Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Memory-Layout-C">
-<meta name="twitter:description" content="#Memory-layout-of-variable-in-C-program  As you know, variable in C can be classified info local variable, global variable. Local variable is stored in Stack, memory allocated with malloc/alloc locate">
+<meta name="twitter:title" content="ios">
   
     <link rel="alternate" href="/atom.xml" title="Intconp" type="application/atom+xml">
   
@@ -68,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Memory-Layout-C" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/23/Memory-Layout-C/" class="article-date">
-  <time datetime="2018-08-22T20:42:02.000Z" itemprop="datePublished">2018-08-22</time>
+    <a href="/ios/index.html" class="article-date">
+  <time datetime="2018-10-31T09:37:52.000Z" itemprop="datePublished">2018-10-31</time>
 </a>
     
   </div>
@@ -82,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Memory-Layout-C
+      ios
     </h1>
   
 
@@ -90,50 +87,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#Memory-layout-of-variable-in-C-program</p>
-<ol>
-<li>As you know, variable in C can be classified info local variable, global variable. Local variable is stored in Stack, memory allocated with malloc/alloc locates in Heap. Global variable and Static Variable is located in global data area, which consists of DS and BSS. DS (data segment) contains initialized variable, which is not zero. DS can be divided into readonly DS area and read write DS area. BSS (block started by symbol) contains uninitialized variable or variable initialized with zero, which can also be divied into readonly BSS area and read write area.</li>
-</ol>
-<p>2.Sample</p>
-<p>void ppp(int parameter) {</p>
-<pre><code>return;
-</code></pre><p>}</p>
-<p>int main() {<br>    ppp(12);<br>    return 0;<br>}</p>
-<p>REG    BEGIN        PUSH EBP    MOV EBP, ESP<br>EBP    0036FD88    0036FD88    0036FD74    main in<br>ESP    0036FD78    0036FD74    0036FD74    </p>
-<p>REG    BEGIN        PUSH EBP    MOV EBP, ESP<br>EBP    0036FD74    0036FD74    0036FC9C    ppp in<br>ESP    0036FCA0    0036FC9C    0036FC9C</p>
-<p>REG    BEGIN        MOV ESP, EBP    POP EBP<br>EBP    0036FC9C    0036FC9C    0036FD74    ppp return<br>ESP    0036F9D0    0036FC9C    0036FCA0    </p>
-<p>REG    BEGIN        MOV ESP, EBP    POP EBP<br>EBP    0036FD74    0036FD74    0036FD88    main return<br>ESP    0036FD74    0036FD74    0036FD78</p>
-<p>Before the program enter main procudure, EBP is 0x0036FD88, so this is the Base Address of current Call Frame, ESP is bigger than EBP, I think all of us can undersand this in X86 Cpu architecture. Now, we enter main, I think I should save the Base Address, right now. As we know, Context should be saved and recovered when key operations begins and stops. So 0x0036FD88 is save to stack, then ESP is decreased to 0x0036FD74. And the same time, EBP is decreased to ESP (0x0036FD84).</p>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Memory-Layout-C/" data-id="cjnwipfv3000ahnpvndpbu7ji" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/ios/index.html" data-id="cjnwipfug0002hnpvuleg1l8w" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
     
-<nav id="article-nav">
-  
-    <a href="/2018/08/23/Permutation/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Permutation
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/08/23/LinkReverse/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">LinkReverse</div>
-    </a>
-  
-</nav>
-
   
 </article>
 
