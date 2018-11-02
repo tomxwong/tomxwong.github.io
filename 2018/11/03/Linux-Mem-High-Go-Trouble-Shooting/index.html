@@ -5,15 +5,26 @@
   
 
   
-  <title>Archives: 2018/10 | Intconp</title>
+  <title>Linux-Mem-High-Go-Trouble-Shooting | Intconp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Intconp">
-<meta property="og:url" content="https://warrenwx.github.io/archives/2018/10/index.html">
+  <meta name="description" content="memory rise up to 90%, process was killed.  the incoming throughput is normal, at 00:00  the outcoming throughput rise abruptly, which last 4 mins (23:59 – 00:03). I think it is an occasion that conc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux-Mem-High-Go-Trouble-Shooting">
+<meta property="og:url" content="https://warrenwx.github.io/2018/11/03/Linux-Mem-High-Go-Trouble-Shooting/index.html">
 <meta property="og:site_name" content="Intconp">
+<meta property="og:description" content="memory rise up to 90%, process was killed.  the incoming throughput is normal, at 00:00  the outcoming throughput rise abruptly, which last 4 mins (23:59 – 00:03). I think it is an occasion that conc">
 <meta property="og:locale" content="En">
+<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/6.png">
+<meta property="og:updated_time" content="2018-11-02T10:47:30.416Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Intconp">
+<meta name="twitter:title" content="Linux-Mem-High-Go-Trouble-Shooting">
+<meta name="twitter:description" content="memory rise up to 90%, process was killed.  the incoming throughput is normal, at 00:00  the outcoming throughput rise abruptly, which last 4 mins (23:59 – 00:03). I think it is an occasion that conc">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/1.png">
   
     <link rel="alternate" href="/atom.xml" title="Intconp" type="application/atom+xml">
   
@@ -64,97 +75,67 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/31/ios11-ppt/" class="archive-article-date">
-  <time datetime="2018-10-31T09:53:45.000Z" itemprop="datePublished">Oct 31</time>
+        <section id="main"><article id="post-Linux-Mem-High-Go-Trouble-Shooting" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/03/Linux-Mem-High-Go-Trouble-Shooting/" class="article-date">
+  <time datetime="2018-11-02T17:50:59.000Z" itemprop="datePublished">2018-11-02</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/ios11-ppt/">ios11-ppt</a>
+    <h1 class="article-title" itemprop="name">
+      Linux-Mem-High-Go-Trouble-Shooting
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/" class="archive-article-date">
-  <time datetime="2018-10-25T15:28:23.000Z" itemprop="datePublished">Oct 25</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction: The type Unsafe is not API (restriction</a>
-    </h1>
-  
+        <p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/1.png" alt="image1"></p>
+<p>memory rise up to 90%, process was killed.</p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/2.png" alt="image1"></p>
+<p>the incoming throughput is normal, at 00:00</p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/3.png" alt="image1"></p>
+<p>the outcoming throughput rise abruptly, which last 4 mins (23:59 – 00:03). I think it is an occasion that concurrent files uploading.</p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/4.png" alt="image1"></p>
+<p>establish tcp connections, which last 8 mins (23:59 – 00:07)</p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/5.png" alt="image1"></p>
+<p>close connections by itself, which last 4 mins (23:59 – 00:03)</p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/6.png" alt="image1"></p>
+<p>analysis: at the beginning of 23:59:00, 7.6k connections will be generated. At 00:00, connections start to become closed. 00:03:00 half of the connections were fully released</p>
+<p>The problem was occured after repairing a high concurrency scene problem, which the concurrent control was used to solve the problem of  high memory. The above is the system status of the problem.</p>
+<p>conclusion: concurrency control is not achieved, 7.6 K connection last for 1 minutes is not the expected phenomenon, the next step is walkthrough the golang code.</p>
+<p>It is found that when the go program processes the concurrency with the channel, the asynchronous func is used between the produce and consume procudure, so that the consumption and return resource back is so quick, and the purpose of controlling concurrency cannot be achieved.</p>
+<p>Modification method: return the space after the product is actually consumed.</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/25/java-objectsize/" class="archive-article-date">
-  <time datetime="2018-10-24T18:51:11.000Z" itemprop="datePublished">Oct 24</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/25/java-objectsize/">java-objectsize</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/18/Volatile/" class="archive-article-date">
-  <time datetime="2018-10-18T14:37:38.000Z" itemprop="datePublished">Oct 18</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://warrenwx.github.io/2018/11/03/Linux-Mem-High-Go-Trouble-Shooting/" data-id="cjnzwzo6g000c6epv5z4x7m6o" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/18/Volatile/">volatile</a>
-    </h1>
-  
-
-    </header>
+      
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/10/31/ios11-ppt/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ios11-ppt</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         

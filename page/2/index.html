@@ -66,6 +66,43 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-LinkReverse" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/23/LinkReverse/" class="article-date">
+  <time datetime="2018-08-22T20:41:55.000Z" itemprop="datePublished">2018-08-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/23/LinkReverse/">LinkReverse</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####Link Reverse</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Node * <span class="title">reverse_link</span><span class="params">(Node *cur)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(cur == <span class="literal">NULL</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> cur;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(cur-&gt;next == <span class="literal">NULL</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> cur;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Node *tmp = reverse_link(cur-&gt;next);</span><br><span class="line">	cur-&gt;next-&gt;next = cur;</span><br><span class="line">	cur-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">return</span> tmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Node * <span class="title">reverse_link_loop</span><span class="params">(Node *cur)</span></span>&#123;</span><br><span class="line">	Node *pre = <span class="literal">NULL</span>;</span><br><span class="line">	Node *next= <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(cur)&#123;</span><br><span class="line">		next = cur-&gt;next;</span><br><span class="line">		cur-&gt;next = pre;</span><br><span class="line">		pre = cur;</span><br><span class="line">		cur = next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://warrenwx.github.io/2018/08/23/LinkReverse/" data-id="cjnzwzo6700076epvm39618m3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-LCS" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/23/LCS/" class="article-date">
@@ -93,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/LCS/" data-id="cjnwivxt70007iqpv70kepxmi" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/LCS/" data-id="cjnzwzo6500066epv4rnjp5ff" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/i-and-i/" data-id="cjnwivxtr000giqpv92c9sdkx" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/i-and-i/" data-id="cjnzwzo7d000j6epvy8lckrwo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Dynamic-Programming/" data-id="cjnwivxt50006iqpvy73ltjjy" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Dynamic-Programming/" data-id="cjnzwzo6200056epvww3atuo4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -255,7 +292,7 @@ jmp     LBB0_1
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/DeadLoop/" data-id="cjnwivxt20005iqpvx3mzix8m" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/DeadLoop/" data-id="cjnzwzo5u00036epvvfgw86in" class="article-share-link">Share</a>
       
       
     </footer>
@@ -292,7 +329,7 @@ jmp     LBB0_1
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/" data-id="cjnwivxsw0003iqpvgs7j2kke" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/" data-id="cjnzwzo6d000b6epvf8yosd3a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -339,7 +376,7 @@ jmp     LBB0_1
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -350,6 +387,10 @@ jmp     LBB0_1
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/11/03/Linux-Mem-High-Go-Trouble-Shooting/">Linux-Mem-High-Go-Trouble-Shooting</a>
+          </li>
         
           <li>
             <a href="/2018/10/31/ios11-ppt/">ios11-ppt</a>
@@ -365,10 +406,6 @@ jmp     LBB0_1
         
           <li>
             <a href="/2018/10/18/Volatile/">volatile</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/23/TCP-Handshake/">TCP-Handshake</a>
           </li>
         
       </ul>

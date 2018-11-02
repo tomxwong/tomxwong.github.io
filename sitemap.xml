@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://warrenwx.github.io/2018/11/03/Linux-Mem-High-Go-Trouble-Shooting/</loc>
+    
+    <lastmod>2018-11-02T10:47:30.416Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://warrenwx.github.io/2018/10/31/ios11-ppt/</loc>
     
     <lastmod>2018-10-31T02:10:14.148Z</lastmod>
@@ -44,28 +51,7 @@
   </url>
   
   <url>
-    <loc>https://warrenwx.github.io/2018/08/23/TCP-Handshake/</loc>
-    
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Permutation/</loc>
-    
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/</loc>
-    
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/</loc>
     
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
     
@@ -79,28 +65,14 @@
   </url>
   
   <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Dynamic-Programming/</loc>
-    
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/i-and-i/</loc>
-    
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/LinkReverse/</loc>
-    
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://warrenwx.github.io/2018/08/23/DeadLoop/</loc>
+    
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/Process-communication/</loc>
     
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
     
@@ -114,7 +86,42 @@
   </url>
   
   <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Process-communication/</loc>
+    <loc>https://warrenwx.github.io/2018/08/23/TCP-Handshake/</loc>
+    
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/i-and-i/</loc>
+    
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/Dynamic-Programming/</loc>
+    
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/LinkReverse/</loc>
+    
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/Permutation/</loc>
+    
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/</loc>
     
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
     
