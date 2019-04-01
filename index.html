@@ -88,11 +88,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><p>Nginx plays an import role in internet trade. But recently, a problem comes out. a Nginx worker process occupy a cpu core fully, nearly 100 percent, and it used nearly 1G Bytes memory, so that the lua vm crashed. Becuase in x86-64 architecure, lua jit can only use 1 Bytes mem.</p>
+<p>Nginx standard errlog:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx: lua atpanic: Lua VM crashed, reason: not enough memory</span><br></pre></td></tr></table></figure></p>
+<h3 id="Causes"><a href="#Causes" class="headerlink" title="Causes"></a>Causes</h3><p>The Nginx accept many big request with big body, then the lua scripts run with long time on string joint and split, while luajit works bad on this scene, which lead to our problem.</p>
+<h3 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h3><p>Discard these big requests.<br>Make luajit use more memory.<br>According to our pratical use scnario, I choose the second way. Finally, My nignx worker can use 4G Bytes memory. Steps as follow:</p>
+<p>Get mmap from <a href="https://github.com/Neopallium/mmap_lowmem" target="_blank" rel="noopener">https://github.com/Neopallium/mmap_lowmem</a>.<br>Compile and link mmap_wrapper, we got libmmap_lowmem_mt.so.<br>Get openresty from <a href="https://github.com/openresty/openresty/releases" target="_blank" rel="noopener">https://github.com/openresty/openresty/releases</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure ?with-ld-opt=?/opt/mmap_lowmem/libmmap_lowmem_mt.so? -j8</span><br></pre></td></tr></table></figure></p>
+<p>Notes:<br>In step 4, we may meet compile interrupt, like openssl zlib pcre missing, just fix it, finally, openresty installment wil finish.</p>
+<p>Run ./nginx, some hint comes out, like ?? got low-mem: len=0xfe3b6000, start=0x1c4a000, end=0x100000000?<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl 127.0.0.1/mem_test</span><br><span class="line">Mem used:2863.9989748001 M</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2019/04/01/Nginx-luajit-memory-crash-mmap-wrapper/" data-id="cjtxsf5na000bvzpv04qti509" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2019/04/01/Nginx-luajit-memory-crash-mmap-wrapper/" data-id="cjtxskzkn000b5tpvcpdxplrn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -144,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/11/03/Linux-Mem-High-Go-Trouble-Shooting/" data-id="cjtxsf5n00009vzpv62lvvkc0" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/11/03/Linux-Mem-High-Go-Trouble-Shooting/" data-id="cjtxskzki00095tpvam4n7f6i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -184,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/10/31/ios11-ppt/" data-id="cjtxsf5p8000jvzpvot9f7xju" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/31/ios11-ppt/" data-id="cjtxskzmj000j5tpvplipuge8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios11-ppt-open/">ios11, ppt, open.</a></li></ul>
@@ -226,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/" data-id="cjtxsf5kr0001vzpv7843m4rh" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/" data-id="cjtxskzj700015tpvvzyv34vt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction The type Unsafe is not API (restriction.</a></li></ul>
@@ -265,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/10/25/java-objectsize/" data-id="cjtxsf5pc000kvzpv4b7lvsoa" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/25/java-objectsize/" data-id="cjtxskzmm000k5tpvc2jf4aip" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-object-size-sizeof/">java object size sizeof</a></li></ul>
@@ -375,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/10/18/Volatile/" data-id="cjtxsf5op000gvzpvzj2m4rd5" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/18/Volatile/" data-id="cjtxskzmc000g5tpvkv9d9uy4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/volatile-synchronized-java-cas/">volatile, synchronized, java, cas.</a></li></ul>
@@ -418,7 +425,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/TCP-Handshake/" data-id="cjtxsf5on000fvzpvabbbriyg" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/TCP-Handshake/" data-id="cjtxskzm1000f5tpvvfgcir85" class="article-share-link">Share</a>
       
       
     </footer>
@@ -456,7 +463,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/" data-id="cjtxsf5oj000evzpvkg2evvhi" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/" data-id="cjtxskzlx000e5tpvjueph3k5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -493,7 +500,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Process-communication/" data-id="cjtxsf5oa000dvzpvbzxr2usg" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Process-communication/" data-id="cjtxskzlc000d5tpvs5lbcdyj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -531,7 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Permutation/" data-id="cjtxsf5o6000cvzpv20z2ui01" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Permutation/" data-id="cjtxskzl8000c5tpvdcei8fht" class="article-share-link">Share</a>
       
       
     </footer>

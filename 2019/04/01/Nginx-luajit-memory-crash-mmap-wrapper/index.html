@@ -7,14 +7,17 @@
   
   <title>Nginx luajit memory crash mmap_wrapper | Intconp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="ProblemNginx plays an import role in internet trade. But recently, a problem comes out. a Nginx worker process occupy a cpu core fully, nearly 100 percent, and it used nearly 1G Bytes memory, so that">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Nginx luajit memory crash mmap_wrapper">
 <meta property="og:url" content="https://warrenwx.github.io/2019/04/01/Nginx-luajit-memory-crash-mmap-wrapper/index.html">
 <meta property="og:site_name" content="Intconp">
+<meta property="og:description" content="ProblemNginx plays an import role in internet trade. But recently, a problem comes out. a Nginx worker process occupy a cpu core fully, nearly 100 percent, and it used nearly 1G Bytes memory, so that">
 <meta property="og:locale" content="En">
-<meta property="og:updated_time" content="2019-04-01T03:19:55.603Z">
+<meta property="og:updated_time" content="2019-04-01T03:26:00.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx luajit memory crash mmap_wrapper">
+<meta name="twitter:description" content="ProblemNginx plays an import role in internet trade. But recently, a problem comes out. a Nginx worker process occupy a cpu core fully, nearly 100 percent, and it used nearly 1G Bytes memory, so that">
   
     <link rel="alternate" href="/atom.xml" title="Intconp" type="application/atom+xml">
   
@@ -87,11 +90,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><p>Nginx plays an import role in internet trade. But recently, a problem comes out. a Nginx worker process occupy a cpu core fully, nearly 100 percent, and it used nearly 1G Bytes memory, so that the lua vm crashed. Becuase in x86-64 architecure, lua jit can only use 1 Bytes mem.</p>
+<p>Nginx standard errlog:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx: lua atpanic: Lua VM crashed, reason: not enough memory</span><br></pre></td></tr></table></figure></p>
+<h3 id="Causes"><a href="#Causes" class="headerlink" title="Causes"></a>Causes</h3><p>The Nginx accept many big request with big body, then the lua scripts run with long time on string joint and split, while luajit works bad on this scene, which lead to our problem.</p>
+<h3 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h3><p>Discard these big requests.<br>Make luajit use more memory.<br>According to our pratical use scnario, I choose the second way. Finally, My nignx worker can use 4G Bytes memory. Steps as follow:</p>
+<p>Get mmap from <a href="https://github.com/Neopallium/mmap_lowmem" target="_blank" rel="noopener">https://github.com/Neopallium/mmap_lowmem</a>.<br>Compile and link mmap_wrapper, we got libmmap_lowmem_mt.so.<br>Get openresty from <a href="https://github.com/openresty/openresty/releases" target="_blank" rel="noopener">https://github.com/openresty/openresty/releases</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure ?with-ld-opt=?/opt/mmap_lowmem/libmmap_lowmem_mt.so? -j8</span><br></pre></td></tr></table></figure></p>
+<p>Notes:<br>In step 4, we may meet compile interrupt, like openssl zlib pcre missing, just fix it, finally, openresty installment wil finish.</p>
+<p>Run ./nginx, some hint comes out, like ?? got low-mem: len=0xfe3b6000, start=0x1c4a000, end=0x100000000?<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl 127.0.0.1/mem_test</span><br><span class="line">Mem used:2863.9989748001 M</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2019/04/01/Nginx-luajit-memory-crash-mmap-wrapper/" data-id="cjtxsf5na000bvzpv04qti509" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2019/04/01/Nginx-luajit-memory-crash-mmap-wrapper/" data-id="cjtxskzkn000b5tpvcpdxplrn" class="article-share-link">Share</a>
       
       
     </footer>
