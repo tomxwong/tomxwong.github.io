@@ -14,17 +14,17 @@
 <meta property="og:site_name" content="Intconp">
 <meta property="og:description" content="memory rise up to 90%, process was killed.  the incoming throughput is normal, at 00:00  the outcoming throughput rise abruptly, which last 4 mins (23:59 – 00:03). I think it is an occasion that conc">
 <meta property="og:locale" content="En">
-<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/1.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/2.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/3.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/4.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/5.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/6.png">
-<meta property="og:updated_time" content="2018-11-02T10:47:30.416Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/6.png">
+<meta property="og:updated_time" content="2019-04-01T09:16:39.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux-Mem-High-Go-Trouble-Shooting">
 <meta name="twitter:description" content="memory rise up to 90%, process was killed.  the incoming throughput is normal, at 00:00  the outcoming throughput rise abruptly, which last 4 mins (23:59 – 00:03). I think it is an occasion that conc">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/1.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/1.png">
   
     <link rel="alternate" href="/atom.xml" title="Intconp" type="application/atom+xml">
   
@@ -97,17 +97,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/1.png" alt="image1"></p>
+        <p><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/1.png" alt="image1"></p>
 <p>memory rise up to 90%, process was killed.</p>
-<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/2.png" alt="image1"></p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/2.png" alt="image1"></p>
 <p>the incoming throughput is normal, at 00:00</p>
-<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/3.png" alt="image1"></p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/3.png" alt="image1"></p>
 <p>the outcoming throughput rise abruptly, which last 4 mins (23:59 – 00:03). I think it is an occasion that concurrent files uploading.</p>
-<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/4.png" alt="image1"></p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/4.png" alt="image1"></p>
 <p>establish tcp connections, which last 8 mins (23:59 – 00:07)</p>
-<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/5.png" alt="image1"></p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/5.png" alt="image1"></p>
 <p>close connections by itself, which last 4 mins (23:59 – 00:03)</p>
-<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/6.png" alt="image1"></p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/6.png" alt="image1"></p>
 <p>analysis: at the beginning of 23:59:00, 7.6k connections will be generated. At 00:00, connections start to become closed. 00:03:00 half of the connections were fully released</p>
 <p>The problem was occured after repairing a high concurrency scene problem, which the concurrent control was used to solve the problem of  high memory. The above is the system status of the problem.</p>
 <p>conclusion: concurrency control is not achieved, 7.6 K connection last for 1 minutes is not the expected phenomenon, the next step is walkthrough the golang code.</p>
@@ -117,7 +117,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/11/03/Linux-Mem-High-Go-Trouble-Shooting/" data-id="cjty4pbuj000a9bpv1b2i1lwt" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/11/03/Linux-Mem-High-Go-Trouble-Shooting/" data-id="cjty4z5pr000alxpv1pvauotf" class="article-share-link">Share</a>
       
       
     </footer>

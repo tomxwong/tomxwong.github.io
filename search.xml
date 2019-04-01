@@ -21,7 +21,7 @@
   <entry>
     <title><![CDATA[Access restriction: The type Unsafe is not API (restriction]]></title>
     <url>%2F2018%2F10%2F25%2FAccess-restriction-The-type-Unsafe-is-not-API-restriction%2F</url>
-    <content type="text"><![CDATA[Access restriction: The type xxx is not API (restrictionGenerally, we can see this in eclipse, as visit a non-public API is forbidden, such as sun.misc.Unsafe. Here I want to cancel this check temporarily.steps as follow: step1. find project properties, and click on ‘build path’ step2. double click ‘Access rules’ or just edit it step3. add a ‘rule’, fill blanks like this. project rebuild.]]></content>
+    <content type="text"><![CDATA[Access restriction: The type xxx is not API (restrictionGenerally, we can see this in eclipse, as visit a non-public API is forbidden, such as sun.misc.Unsafe. Here I want to cancel this check temporarily.steps as follow: step1. find project properties, and click on ‘build path’[ step2. double click ‘Access rules’ or just edit it[ step3. add a ‘rule’, fill blanks like this. project rebuild.[]]></content>
       <tags>
         <tag>Access restriction The type Unsafe is not API (restriction.</tag>
       </tags>

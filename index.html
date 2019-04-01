@@ -99,7 +99,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2019/04/01/Nginx-luajit-memory-crash-mmap-wrapper/" data-id="cjty4pbuz000c9bpvqb7yw2gp" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2019/04/01/Nginx-luajit-memory-crash-mmap-wrapper/" data-id="cjty4z5q2000clxpv3kcq0k88" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,17 +131,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/1.png" alt="image1"></p>
+        <p><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/1.png" alt="image1"></p>
 <p>memory rise up to 90%, process was killed.</p>
-<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/2.png" alt="image1"></p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/2.png" alt="image1"></p>
 <p>the incoming throughput is normal, at 00:00</p>
-<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/3.png" alt="image1"></p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/3.png" alt="image1"></p>
 <p>the outcoming throughput rise abruptly, which last 4 mins (23:59 – 00:03). I think it is an occasion that concurrent files uploading.</p>
-<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/4.png" alt="image1"></p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/4.png" alt="image1"></p>
 <p>establish tcp connections, which last 8 mins (23:59 – 00:07)</p>
-<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/5.png" alt="image1"></p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/5.png" alt="image1"></p>
 <p>close connections by itself, which last 4 mins (23:59 – 00:03)</p>
-<p><img src="https://raw.githubusercontent.com/warrenwx/warrenwx_hexo/master/20181102/6.png" alt="image1"></p>
+<p><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/6.png" alt="image1"></p>
 <p>analysis: at the beginning of 23:59:00, 7.6k connections will be generated. At 00:00, connections start to become closed. 00:03:00 half of the connections were fully released</p>
 <p>The problem was occured after repairing a high concurrency scene problem, which the concurrent control was used to solve the problem of  high memory. The above is the system status of the problem.</p>
 <p>conclusion: concurrency control is not achieved, 7.6 K connection last for 1 minutes is not the expected phenomenon, the next step is walkthrough the golang code.</p>
@@ -151,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/11/03/Linux-Mem-High-Go-Trouble-Shooting/" data-id="cjty4pbuj000a9bpv1b2i1lwt" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/11/03/Linux-Mem-High-Go-Trouble-Shooting/" data-id="cjty4z5pr000alxpv1pvauotf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -191,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/10/31/ios11-ppt/" data-id="cjty4pbw1000k9bpv9ag8dpv2" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/31/ios11-ppt/" data-id="cjty4z5r7000klxpvof3iqp10" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios11-ppt-open/">ios11, ppt, open.</a></li></ul>
@@ -226,14 +226,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="Access-restriction-The-type-xxx-is-not-API-restriction"><a href="#Access-restriction-The-type-xxx-is-not-API-restriction" class="headerlink" title="Access restriction: The type xxx is not API (restriction"></a>Access restriction: The type xxx is not API (restriction</h3><p>Generally, we can see this in eclipse, as visit a non-public API is forbidden, such as sun.misc.Unsafe. Here I want to cancel this check temporarily.<br>steps as follow:</p>
-<h4 id="step1-find-project-properties-and-click-on-‘build-path’"><a href="#step1-find-project-properties-and-click-on-‘build-path’" class="headerlink" title="step1. find project properties, and click on ‘build path’"></a>step1. find project properties, and click on ‘build path’</h4><p><a href="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/2.png" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/1.png" alt=""></a></p>
-<h4 id="step2-double-click-‘Access-rules’-or-just-edit-it"><a href="#step2-double-click-‘Access-rules’-or-just-edit-it" class="headerlink" title="step2. double click ‘Access rules’ or just edit it"></a>step2. double click ‘Access rules’ or just edit it</h4><p><a href="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/4.png" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/3.png" alt=""></a></p>
-<h4 id="step3-add-a-‘rule’-fill-blanks-like-this-project-rebuild"><a href="#step3-add-a-‘rule’-fill-blanks-like-this-project-rebuild" class="headerlink" title="step3. add a ‘rule’, fill blanks like this. project rebuild."></a>step3. add a ‘rule’, fill blanks like this. project rebuild.</h4><p><a href="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/6.png" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/20181102/5.png" alt=""></a></p>
+<h4 id="step1-find-project-properties-and-click-on-‘build-path’"><a href="#step1-find-project-properties-and-click-on-‘build-path’" class="headerlink" title="step1. find project properties, and click on ‘build path’"></a>step1. find project properties, and click on ‘build path’</h4><p>[<img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025153958.png" alt=""></p>
+<h4 id="step2-double-click-‘Access-rules’-or-just-edit-it"><a href="#step2-double-click-‘Access-rules’-or-just-edit-it" class="headerlink" title="step2. double click ‘Access rules’ or just edit it"></a>step2. double click ‘Access rules’ or just edit it</h4><p>[<img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025154023.png" alt=""></p>
+<h4 id="step3-add-a-‘rule’-fill-blanks-like-this-project-rebuild"><a href="#step3-add-a-‘rule’-fill-blanks-like-this-project-rebuild" class="headerlink" title="step3. add a ‘rule’, fill blanks like this. project rebuild."></a>step3. add a ‘rule’, fill blanks like this. project rebuild.</h4><p>[<img src="https://raw.githubusercontent.com/warrenwx/hexo_data/master/files/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181025154219.png" alt=""></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/" data-id="cjty4pbt100019bpvgbtmv0nc" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/" data-id="cjty4z5nx0001lxpvwusr0kyb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction The type Unsafe is not API (restriction.</a></li></ul>
@@ -272,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/10/25/java-objectsize/" data-id="cjty4pbw3000l9bpvqb1grlma" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/25/java-objectsize/" data-id="cjty4z5rm000llxpvd5tjhp3k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-object-size-sizeof/">java object size sizeof</a></li></ul>
@@ -382,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/10/18/Volatile/" data-id="cjty4pbvx000h9bpvubxq7k50" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/18/Volatile/" data-id="cjty4z5r0000hlxpv0xqiqhmu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/volatile-synchronized-java-cas/">volatile, synchronized, java, cas.</a></li></ul>
@@ -425,7 +425,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/TCP-Handshake/" data-id="cjty4pbvt000g9bpvqbgu81th" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/TCP-Handshake/" data-id="cjty4z5qv000glxpvvrm33gzb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -463,7 +463,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/" data-id="cjty4pbvp000f9bpvphi0x1ny" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/" data-id="cjty4z5qr000flxpvfls20dcq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -500,7 +500,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Process-communication/" data-id="cjty4pbvm000e9bpvc7pu9dtq" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Process-communication/" data-id="cjty4z5qn000elxpv2gotudpb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -538,7 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Permutation/" data-id="cjty4pbv2000d9bpvby1srtgu" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Permutation/" data-id="cjty4z5q8000dlxpv7gj44crm" class="article-share-link">Share</a>
       
       
     </footer>
