@@ -66,6 +66,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Memory-Layout-C" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/23/Memory-Layout-C/" class="article-date">
+  <time datetime="2018-08-22T20:42:02.000Z" itemprop="datePublished">2018-08-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/23/Memory-Layout-C/">Memory-Layout-C</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Memory-layout-of-variable-in-C-program</p>
+<ol>
+<li>As you know, variable in C can be classified info local variable, global variable. Local variable is stored in Stack, memory allocated with malloc/alloc locates in Heap. Global variable and Static Variable is located in global data area, which consists of DS and BSS. DS (data segment) contains initialized variable, which is not zero. DS can be divided into readonly DS area and read write DS area. BSS (block started by symbol) contains uninitialized variable or variable initialized with zero, which can also be divied into readonly BSS area and read write area.</li>
+</ol>
+<p>2.Sample</p>
+<p>void ppp(int parameter) {</p>
+<pre><code>return;
+</code></pre><p>}</p>
+<p>int main() {<br>    ppp(12);<br>    return 0;<br>}</p>
+<p>REG    BEGIN        PUSH EBP    MOV EBP, ESP<br>EBP    0036FD88    0036FD88    0036FD74    main in<br>ESP    0036FD78    0036FD74    0036FD74    </p>
+<p>REG    BEGIN        PUSH EBP    MOV EBP, ESP<br>EBP    0036FD74    0036FD74    0036FC9C    ppp in<br>ESP    0036FCA0    0036FC9C    0036FC9C</p>
+<p>REG    BEGIN        MOV ESP, EBP    POP EBP<br>EBP    0036FC9C    0036FC9C    0036FD74    ppp return<br>ESP    0036F9D0    0036FC9C    0036FCA0    </p>
+<p>REG    BEGIN        MOV ESP, EBP    POP EBP<br>EBP    0036FD74    0036FD74    0036FD88    main return<br>ESP    0036FD74    0036FD74    0036FD78</p>
+<p>Before the program enter main procudure, EBP is 0x0036FD88, so this is the Base Address of current Call Frame, ESP is bigger than EBP, I think all of us can undersand this in X86 Cpu architecture. Now, we enter main, I think I should save the Base Address, right now. As we know, Context should be saved and recovered when key operations begins and stops. So 0x0036FD88 is save to stack, then ESP is decreased to 0x0036FD74. And the same time, EBP is decreased to ESP (0x0036FD84).</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://warrenwx.github.io/2018/08/23/Memory-Layout-C/" data-id="cjtxsf5n6000avzpvsl2lczrd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-LinkReverse" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/23/LinkReverse/" class="article-date">
@@ -93,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/LinkReverse/" data-id="cjnzwzo6700076epvm39618m3" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/LinkReverse/" data-id="cjtxsf5mw0008vzpvecp8iz79" class="article-share-link">Share</a>
       
       
     </footer>
@@ -130,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/LCS/" data-id="cjnzwzo6500066epv4rnjp5ff" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/LCS/" data-id="cjtxsf5mt0006vzpvm35qlz3f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/i-and-i/" data-id="cjnzwzo7d000j6epvy8lckrwo" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/i-and-i/" data-id="cjtxsf5p4000hvzpv222e9lgx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -218,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Dynamic-Programming/" data-id="cjnzwzo6200056epvww3atuo4" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Dynamic-Programming/" data-id="cjtxsf5mp0005vzpv9src6azj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -292,7 +342,7 @@ jmp     LBB0_1
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/DeadLoop/" data-id="cjnzwzo5u00036epvvfgw86in" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/DeadLoop/" data-id="cjtxsf5mk0004vzpvqlgtltlm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -329,7 +379,7 @@ jmp     LBB0_1
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/" data-id="cjnzwzo6d000b6epvf8yosd3a" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/" data-id="cjtxsf5m60002vzpvbt4vkz1b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +426,7 @@ jmp     LBB0_1
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -387,6 +437,10 @@ jmp     LBB0_1
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/04/01/Nginx-luajit-memory-crash-mmap-wrapper/">Nginx luajit memory crash mmap_wrapper</a>
+          </li>
         
           <li>
             <a href="/2018/11/03/Linux-Mem-High-Go-Trouble-Shooting/">Linux-Mem-High-Go-Trouble-Shooting</a>
@@ -404,10 +458,6 @@ jmp     LBB0_1
             <a href="/2018/10/25/java-objectsize/">java-objectsize</a>
           </li>
         
-          <li>
-            <a href="/2018/10/18/Volatile/">volatile</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -420,7 +470,7 @@ jmp     LBB0_1
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 warrenwx/warrenwx<br>     
+      &copy; 2019 warrenwx/warrenwx<br>     
     </div>
   </div>
 </footer>
