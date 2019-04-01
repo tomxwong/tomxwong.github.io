@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://warrenwx.github.io/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/</loc>
+    <lastmod>2019-04-01T08:01:51.495Z</lastmod>
+  </url>  <url>
     <loc>https://warrenwx.github.io/2019/04/01/Nginx-luajit-memory-crash-mmap-wrapper/</loc>
     <lastmod>2019-04-01T03:26:00.538Z</lastmod>
   </url>  <url>
@@ -9,9 +12,6 @@
   </url>  <url>
     <loc>https://warrenwx.github.io/2018/10/31/ios11-ppt/</loc>
     <lastmod>2018-10-31T02:10:14.148Z</lastmod>
-  </url>  <url>
-    <loc>https://warrenwx.github.io/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/</loc>
-    <lastmod>2018-10-25T11:53:44.751Z</lastmod>
   </url>  <url>
     <loc>https://warrenwx.github.io/2018/10/18/Volatile/</loc>
     <lastmod>2018-10-25T11:52:48.658Z</lastmod>
