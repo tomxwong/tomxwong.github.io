@@ -66,6 +66,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Permutation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/23/Permutation/" class="article-date">
+  <time datetime="2018-08-22T20:42:08.000Z" itemprop="datePublished">2018-08-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/23/Permutation/">Permutation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###Permuation with Lua code</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print_arr</span><span class="params">(dataArr, length)</span></span></span><br><span class="line">	<span class="keyword">local</span> str = <span class="string">""</span>;</span><br><span class="line">	<span class="keyword">for</span> i = <span class="number">1</span>, length <span class="keyword">do</span></span><br><span class="line">		str = str..<span class="string">"\t"</span>..<span class="built_in">tostring</span>(dataArr[i]);</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">	<span class="built_in">print</span>(str)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap</span><span class="params">(data, i, index)</span></span></span><br><span class="line">	t = data[index];</span><br><span class="line">	data[index] = data[i];</span><br><span class="line">	data[i] = t;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">permutation</span><span class="params">(data, sbegin, send)</span></span></span><br><span class="line">	<span class="keyword">if</span> sbegin == send <span class="keyword">then</span></span><br><span class="line">		print_arr(data, <span class="number">4</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i = sbegin, send <span class="keyword">do</span></span><br><span class="line">		swap(data, sbegin, i);</span><br><span class="line">		permutation(data, sbegin + <span class="number">1</span>, send);</span><br><span class="line">		swap(data, sbegin, i);</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">data = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line">permutation(data, <span class="number">1</span>, <span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">char</span> *a, <span class="keyword">char</span> *b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> temp = *a;</span><br><span class="line">	*a = *b;</span><br><span class="line">	*b = temp;</span><br><span class="line">	temp = *a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_arr</span><span class="params">(<span class="built_in">string</span> str)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">string</span>::iterator it = str.begin(); it != str.end(); ++it)&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; *it &lt;&lt; <span class="string">'\t'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">permutation</span><span class="params">(<span class="built_in">string</span> str, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (begin == end)&#123;</span><br><span class="line">		print_arr(str);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; str.length(); ++i)&#123;</span><br><span class="line">		swap(&amp;str[begin], &amp;str[i]);</span><br><span class="line">		permutation(str, begin + <span class="number">1</span>, end);</span><br><span class="line">		swap(&amp;str[begin], &amp;str[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="built_in">string</span> <span class="title">str</span><span class="params">(<span class="string">"abc"</span>)</span></span>;</span><br><span class="line">	permutation(str, <span class="number">0</span>, str.length() - <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://warrenwx.github.io/2018/08/23/Permutation/" data-id="cjumisvdl000bqtpvcwkr4e5h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Memory-Layout-C" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/23/Memory-Layout-C/" class="article-date">
@@ -106,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Memory-Layout-C/" data-id="cjty4z5pv000blxpvxjkz9ver" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Memory-Layout-C/" data-id="cjumisvcr0009qtpvscxofbwa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/LinkReverse/" data-id="cjty4z5pb0009lxpvlj7w1mp2" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/LinkReverse/" data-id="cjumisvbp0007qtpv5jjm31f6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/LCS/" data-id="cjty4z5p90007lxpvdjrcm475" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/LCS/" data-id="cjumisvbk0006qtpvibtz32g3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -223,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/i-and-i/" data-id="cjty4z5r3000ilxpvpe7hteds" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/i-and-i/" data-id="cjumisvgg000hqtpv1ly0lrtl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -268,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Dynamic-Programming/" data-id="cjty4z5p30006lxpvct5yuyy7" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Dynamic-Programming/" data-id="cjumisvb80005qtpvqouz8omh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -342,7 +380,7 @@ jmp     LBB0_1
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/DeadLoop/" data-id="cjty4z5ow0005lxpvndzuefk2" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/DeadLoop/" data-id="cjumisvag0003qtpv685o9h6t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -379,7 +417,7 @@ jmp     LBB0_1
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/" data-id="cjty4z5ok0003lxpv8m65ap4z" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/" data-id="cjumisvdh000aqtpv3snjxdy9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -439,6 +477,10 @@ jmp     LBB0_1
       <ul>
         
           <li>
+            <a href="/2019/04/19/The-Essence-of-Life/">The Essence of Life</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/01/Nginx-luajit-memory-crash-mmap-wrapper/">Nginx luajit memory crash mmap_wrapper</a>
           </li>
         
@@ -452,10 +494,6 @@ jmp     LBB0_1
         
           <li>
             <a href="/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction: The type Unsafe is not API (restriction</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/25/java-objectsize/">java-objectsize</a>
           </li>
         
       </ul>
