@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://warrenwx.github.io/2019/04/19/The-Essence-of-Life/</loc>
-    <lastmod>2019-04-18T10:08:20.451Z</lastmod>
+    <lastmod>2019-04-18T10:48:35.860Z</lastmod>
   </url>  <url>
     <loc>https://warrenwx.github.io/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/</loc>
     <lastmod>2019-04-01T09:19:17.687Z</lastmod>
@@ -22,6 +22,9 @@
     <loc>https://warrenwx.github.io/2018/10/25/java-objectsize/</loc>
     <lastmod>2018-10-24T10:59:14.578Z</lastmod>
   </url>  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/</loc>
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+  </url>  <url>
     <loc>https://warrenwx.github.io/2018/08/23/DeadLoop/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
@@ -35,9 +38,6 @@
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
     <loc>https://warrenwx.github.io/2018/08/23/Memory-Layout-C/</loc>
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-  </url>  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
     <loc>https://warrenwx.github.io/2018/08/23/Permutation/</loc>
