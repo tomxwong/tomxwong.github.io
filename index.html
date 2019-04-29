@@ -66,6 +66,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-idempotence" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/30/idempotence/" class="article-date">
+  <time datetime="2019-04-29T18:08:56.000Z" itemprop="datePublished">2019-04-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/30/idempotence/">幂等设计</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><p>The side-effects of N &gt; 0 identical requests is the same as for a single request.</p>
+<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><p>Generally, we design interfaces, which will interact each other. What will happend, if an interface is called many times. Obviously, some bad influences will come. Duplicated data, destroy other processing flow . etc. </p>
+<h3 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h3><ol>
+<li>Intruducing a third-part service, which is responsible for processing out job, after submitting the job, the upstream can do other thing. the third-part service will execute the job transactional.</li>
+<li>Simply introducing an ‘id’ in the calling flow. Firstly, apply for an id from pub-service. Then, no matter in the caller side or in the called side, we know the same ‘id’ won’t be processed two times.</li>
+</ol>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>Simply, we choose the second solution in general scenario. While we may use the first one in some Real Big system.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://warrenwx.github.io/2019/04/30/idempotence/" data-id="cjv2981rv000mb8pvj3nz4iim" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/幂等-http-中间件/">幂等 http 中间件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-The-Essence-of-Life" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/19/The-Essence-of-Life/" class="article-date">
@@ -110,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2019/04/19/The-Essence-of-Life/" data-id="cjumj1cjv000h4lpvii3lay8s" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2019/04/19/The-Essence-of-Life/" data-id="cjv2981r2000ib8pvry19j7wq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/essence-life/">essence, life</a></li></ul>
@@ -155,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2019/04/01/Nginx-luajit-memory-crash-mmap-wrapper/" data-id="cjumj1cja000c4lpvpytgy6yh" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2019/04/01/Nginx-luajit-memory-crash-mmap-wrapper/" data-id="cjv2981q2000db8pvcskm4ty2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -207,7 +252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/11/03/Linux-Mem-High-Go-Trouble-Shooting/" data-id="cjumj1cj5000a4lpvbbapnhv0" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/11/03/Linux-Mem-High-Go-Trouble-Shooting/" data-id="cjv2981op000bb8pvuq3m5alb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -247,7 +292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/10/31/ios11-ppt/" data-id="cjumj1cjz000l4lpvo5xznqi9" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/31/ios11-ppt/" data-id="cjv2981s8000nb8pvyd0vsfkc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios11-ppt-open/">ios11, ppt, open.</a></li></ul>
@@ -289,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/" data-id="cjumj1cfv00014lpvjixxvc51" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/" data-id="cjv2981mo0001b8pvtd6xxx76" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction The type Unsafe is not API (restriction.</a></li></ul>
@@ -328,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/10/25/java-objectsize/" data-id="cjumj1ck0000m4lpvvaernlg4" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/25/java-objectsize/" data-id="cjv2981se000qb8pv664yxmmp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-object-size-sizeof/">java object size sizeof</a></li></ul>
@@ -438,7 +483,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/10/18/Volatile/" data-id="cjumj1cjw000i4lpvt01dgvya" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/10/18/Volatile/" data-id="cjv2981r9000jb8pv5u8ztsmr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/volatile-synchronized-java-cas/">volatile, synchronized, java, cas.</a></li></ul>
@@ -481,7 +526,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/TCP-Handshake/" data-id="cjumj1cjt000g4lpvgjhk92kw" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/TCP-Handshake/" data-id="cjv2981qx000hb8pvlu6xf4cs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -519,44 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/" data-id="cjumj1cjq000f4lpvi05yei20" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Process-communication" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/23/Process-communication/" class="article-date">
-  <time datetime="2018-08-22T20:42:15.000Z" itemprop="datePublished">2018-08-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/23/Process-communication/">Process-communication</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://docs.oracle.com/cd/E38902_01/html/E38880/svipc-38596.html" target="_blank" rel="noopener">Process_Communication</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Process-communication/" data-id="cjumj1cjd000e4lpvz3e1aydc" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Sunday-Method-Pattern-Match/" data-id="cjv2981qn000gb8pvdfju7dur" class="article-share-link">Share</a>
       
       
     </footer>
@@ -584,7 +592,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction The type Unsafe is not API (restriction.</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/essence-life/">essence, life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios11-ppt-open/">ios11, ppt, open.</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-object-size-sizeof/">java object size sizeof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/volatile-synchronized-java-cas/">volatile, synchronized, java, cas.</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction The type Unsafe is not API (restriction.</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/essence-life/">essence, life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios11-ppt-open/">ios11, ppt, open.</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-object-size-sizeof/">java object size sizeof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/volatile-synchronized-java-cas/">volatile, synchronized, java, cas.</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/幂等-http-中间件/">幂等 http 中间件</a></li></ul>
     </div>
   </div>
 
@@ -594,7 +602,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/" style="font-size: 10px;">Access restriction The type Unsafe is not API (restriction.</a> <a href="/tags/essence-life/" style="font-size: 10px;">essence, life</a> <a href="/tags/ios11-ppt-open/" style="font-size: 10px;">ios11, ppt, open.</a> <a href="/tags/java-object-size-sizeof/" style="font-size: 10px;">java object size sizeof</a> <a href="/tags/volatile-synchronized-java-cas/" style="font-size: 10px;">volatile, synchronized, java, cas.</a>
+      <a href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/" style="font-size: 10px;">Access restriction The type Unsafe is not API (restriction.</a> <a href="/tags/essence-life/" style="font-size: 10px;">essence, life</a> <a href="/tags/ios11-ppt-open/" style="font-size: 10px;">ios11, ppt, open.</a> <a href="/tags/java-object-size-sizeof/" style="font-size: 10px;">java object size sizeof</a> <a href="/tags/volatile-synchronized-java-cas/" style="font-size: 10px;">volatile, synchronized, java, cas.</a> <a href="/tags/幂等-http-中间件/" style="font-size: 10px;">幂等 http 中间件</a>
     </div>
   </div>
 
@@ -616,6 +624,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/30/idempotence/">幂等设计</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/19/The-Essence-of-Life/">The Essence of Life</a>
           </li>
         
@@ -629,10 +641,6 @@
         
           <li>
             <a href="/2018/10/31/ios11-ppt/">ios11-ppt</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/25/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction: The type Unsafe is not API (restriction</a>
           </li>
         
       </ul>
