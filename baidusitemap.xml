@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://warrenwx.github.io/2019/08/15/5-Love-Languages/</loc>
-    <lastmod>2019-08-15T04:07:29.889Z</lastmod>
+    <lastmod>2019-08-15T06:09:34.439Z</lastmod>
   </url>  <url>
     <loc>https://warrenwx.github.io/2019/06/15/Canal-Introduction/</loc>
     <lastmod>2019-06-15T02:48:27.143Z</lastmod>
@@ -34,6 +34,9 @@
     <loc>https://warrenwx.github.io/2018/10/25/java-objectsize/</loc>
     <lastmod>2018-10-24T10:59:14.578Z</lastmod>
   </url>  <url>
+    <loc>https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/</loc>
+    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
+  </url>  <url>
     <loc>https://warrenwx.github.io/2018/08/23/DeadLoop/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
@@ -47,9 +50,6 @@
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
     <loc>https://warrenwx.github.io/2018/08/23/Memory-Layout-C/</loc>
-    <lastmod>2018-08-23T11:42:53.000Z</lastmod>
-  </url>  <url>
-    <loc>https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/</loc>
     <lastmod>2018-08-23T11:42:53.000Z</lastmod>
   </url>  <url>
     <loc>https://warrenwx.github.io/2018/08/23/Permutation/</loc>
