@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[5 Love Languages]]></title>
+    <url>%2F2019%2F08%2F15%2F5-Love-Languages%2F</url>
+    <content type="text"><![CDATA[StoryIn his early years as a marriage counselor, Dr. Gary Chapman noticed over and over that couples would voice similar complaints regarding their marriage. One spouse would say something like, ?I feel like he doesn?t love me. The other would protest, ?I don?t know what else to do! I?m doing everything I should be doing.? Recognizing a pattern, Dr. Chapman pored through years of session notes. He asked himself, ?When someone said, ?I feel like my spouse doesn?t love me,? what do they actually want?? Surprisingly, their answers fell into five categories, revealing a unique approach in how to effectively love another person. More than 25 years later, this revolutionary concept has improved millions of relationships across the globe. The premise is simple: different people with different personalities express love in different ways. Gary called these ways of expressing and receiving love the ?5 Love Languages.? They are Words of Affirmation, Acts of Service, Receiving Gifts, Quality Time, and Physical Touch. Each individual has at least one language that they prefer above the other? and this is where it gets interesting. The 5 Love Languages Words of Affirmation Actions don?t always speak louder than words. If this is your love language, unsolicited compliments mean the world to you. Hearing the words, ?I love you,? are important ? hearing the reasons behind that love sends your spirits skyward. Insults can leave you shattered and are not easily forgotten. Kind, encouraging, and positive words are truly life-giving. Acts of Service Can vacuuming the floors really be an expression of love? Absolutely! Anything you do to ease the burden of responsibilities weighing on an ?Acts of Service? person will speak volumes. The words he or she most want to hear: ?Let me do that for you.? Laziness, broken commitments, and making more work for them tell speakers of this language their feelings don?t matter. Finding ways to serve speaks volumes to the recipient of these acts. Recieving Gifts Don?t mistake this love language for materialism; the receiver of gifts thrives on the love, thoughtfulness, and effort behind the gift. If you speak this language, the perfect gift or gesture shows that you are known, you are cared for, and you are prized above whatever was sacrificed to bring the gift to you. A missed birthday, anniversary, or a hasty, thoughtless gift would be disastrous ? so would the absence of everyday gestures. Gifts are visual representations of love and are treasured greatly. Quality Time In the vernacular of Quality Time, nothing says, ?I love you,? like full, undivided attention. Being there for this type of person is critical, but really being there ? with the TV off, fork and knife down, and all chores and tasks on standby ? makes your significant other feel truly special and loved. Distractions, postponed dates, or the failure to listen can be especially hurtful. Quality time also means sharing quality conversation and quality activities. Physical Touch]]></content>
+      <tags>
+        <tag>warqp, affirmation, touch, physical, service</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Canal Introduction]]></title>
+    <url>%2F2019%2F06%2F15%2FCanal-Introduction%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[NGINX Lua Business Optimization]]></title>
+    <url>%2F2019%2F05%2F31%2FNGINX-Lua-Business-Optimization%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[幂等设计]]></title>
     <url>%2F2019%2F04%2F30%2Fidempotence%2F</url>
     <content type="text"><![CDATA[ConceptThe side-effects of N &gt; 0 identical requests is the same as for a single request. BackgroundGenerally, we design interfaces, which will interact each other. What will happend, if an interface is called many times. Obviously, some bad influences will come. Duplicated data, destroy other processing flow . etc. Solutions Intruducing a third-part service, which is responsible for processing out job, after submitting the job, the upstream can do other thing. the third-part service will execute the job transactional. Simply introducing an ‘id’ in the calling flow. Firstly, apply for an id from pub-service. Then, no matter in the caller side or in the called side, we know the same ‘id’ won’t be processed two times. ConclusionSimply, we choose the second solution in general scenario. While we may use the first one in some Real Big system.]]></content>
