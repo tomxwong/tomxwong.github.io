@@ -66,6 +66,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Dynamic-Programming" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/23/Dynamic-Programming/" class="article-date">
+  <time datetime="2018-08-22T20:41:35.000Z" itemprop="datePublished">2018-08-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/23/Dynamic-Programming/">Dynamic-Programming</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Definition(DP):<br>dynamic programming is a method for solving a complex problem by breaking it down into a collection of simpler subproblems, solving each of those subproblems just once, and storing their solutions. The next time the same subproblem occurs, instead of recomputing its solution, one simply looks up the previously computed solution, thereby saving computation time at the expense of a modest expenditure in storage space.</p>
+<p>母牛问题：<br>初始时间只有一头母牛，第二年开始每只成熟的母牛都会产下一头小母牛，一头小母牛话费3年成熟且可以再生下小母牛；求解第n年总母牛头数。<br>S(n) = S(n - 1) + S(n - 3)<br>S(1) = 1<br>S(2) = 2<br>S(3) = 3</p>
+<p>Fibonacci数列问题：<br>从第三项开始每一项等于前两项的和。<br>S(n) = S(n - 1) + S(n - 2)<br>S(1) = 1<br>S(2) = 1</p>
+<p>以上两个问题均可以用递归和根据公式用循环的方法来计算，时间复杂度分别为2^n和n, 以斐波那契额问题为例，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//java version</span></span><br><span class="line"><span class="comment">//recursive</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getFibnacciRecurse</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">1</span> || n == <span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> getFibonacciRecurse(n - <span class="number">1</span>) + getFibonacciRecurse(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//java version</span></span><br><span class="line"><span class="comment">//loop</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getFibonacciLoop</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> m1 = <span class="number">1</span>, m2 = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">3</span>, tmp = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(index &lt;= n)&#123;</span><br><span class="line">        tmp = m1 + m2;</span><br><span class="line">        m1 = m2;</span><br><span class="line">        m2 = tmp;</span><br><span class="line">        index++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>利用矩阵计算方法，为了更快的计算<br>考虑到A(n) = A(n - 1) + A(n - 2), 右侧可以写成矩阵相乘的形式：</p>
+<p>对上式可以进一步变形，成：</p>
+<p>重复使用此公式，可以得到：</p>
+<p>计算结果，快速幂计算方法：首先考虑计算10^15，15二进制为00001111，当计算10^1之后其结果可以用来计算10^2，因此10^4，10^8也可以通过一次乘法计算出来；通过这种方式可以在log(n)的时间复杂度上计算出矩阵的幂。<br>以下为快速矩阵方式计算斐波那契额数列第n项代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//java version</span></span><br><span class="line"><span class="comment">//quick matrix multi of pow exp</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span>[][] MatrixPowerSpeed(<span class="keyword">long</span>[][] matrix, <span class="keyword">int</span> pow)&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">long</span>[][] tmp = matrix;</span><br><span class="line">		<span class="keyword">long</span>[][] res = <span class="keyword">new</span> <span class="keyword">long</span>[matrix.length][matrix[<span class="number">0</span>].length];</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i ++)&#123;</span><br><span class="line">			res[i][i] = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span>(pow != <span class="number">0</span>)&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span> ((pow &amp; <span class="number">1</span>) != <span class="number">0</span>) &#123;</span><br><span class="line">				res = Matrix.MatrixMulti(res, tmp);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			tmp = Matrix.MatrixMulti(tmp, tmp);</span><br><span class="line">			pow = pow &gt;&gt; <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> res;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//basic two matrix multi</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span>[][] MatrixMulti(<span class="keyword">long</span>[][] matrix1, <span class="keyword">long</span>[][] matrix2)&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> matrix1RowLen = matrix1.length;</span><br><span class="line">		<span class="keyword">int</span> matrix1ColumnLen = matrix1[<span class="number">0</span>].length;</span><br><span class="line">		<span class="keyword">int</span> matrix2RowLen = matrix2.length;</span><br><span class="line">		<span class="keyword">int</span> matrix2ColumnLen = matrix2[<span class="number">0</span>].length;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (matrix1ColumnLen != matrix2RowLen) &#123;</span><br><span class="line">			System.out.println(<span class="string">"matrix multi condition not met!"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">long</span>[][] res = <span class="keyword">new</span> <span class="keyword">long</span>[matrix1RowLen][matrix2ColumnLen];</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix1RowLen; i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix2ColumnLen; j++)&#123;</span><br><span class="line">				res[i][j] = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; matrix1ColumnLen; k ++)&#123;</span><br><span class="line">					res[i][j] += matrix1[i][k] * matrix2[k][j];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://warrenwx.github.io/2018/08/23/Dynamic-Programming/" data-id="ck24p5get000buvpvff7ruo8d" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-DeadLoop" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/23/DeadLoop/" class="article-date">
@@ -130,7 +175,7 @@ jmp     LBB0_1
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/DeadLoop/" data-id="cjzcas67s000ajwpvk8s9u0ne" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/DeadLoop/" data-id="ck24p5gep000auvpvx1qcll6t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,7 +212,7 @@ jmp     LBB0_1
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/" data-id="cjzcas64f0004jwpv9e1wrymo" class="article-share-link">Share</a>
+      <a data-url="https://warrenwx.github.io/2018/08/23/Basic-Sorting-Algorithm/" data-id="ck24p5gen0007uvpvrr02m1m2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -195,7 +240,7 @@ jmp     LBB0_1
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction The type Unsafe is not API (restriction.</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/essence-life/">essence, life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios11-ppt-open/">ios11, ppt, open.</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-object-size-sizeof/">java object size sizeof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/volatile-synchronized-java-cas/">volatile, synchronized, java, cas.</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/warqp-affirmation-touch-physical-service/">warqp, affirmation, touch, physical, service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/幂等-http-中间件/">幂等 http 中间件</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/">Access restriction The type Unsafe is not API (restriction.</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dp-recursively/">dp recursively</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/essence-life/">essence, life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios11-ppt-open/">ios11, ppt, open.</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-object-size-sizeof/">java object size sizeof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/volatile-synchronized-java-cas/">volatile, synchronized, java, cas.</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/warqp-affirmation-touch-physical-service/">warqp, affirmation, touch, physical, service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/幂等-http-中间件/">幂等 http 中间件</a></li></ul>
     </div>
   </div>
 
@@ -205,7 +250,7 @@ jmp     LBB0_1
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/" style="font-size: 10px;">Access restriction The type Unsafe is not API (restriction.</a> <a href="/tags/essence-life/" style="font-size: 10px;">essence, life</a> <a href="/tags/ios11-ppt-open/" style="font-size: 10px;">ios11, ppt, open.</a> <a href="/tags/java-object-size-sizeof/" style="font-size: 10px;">java object size sizeof</a> <a href="/tags/volatile-synchronized-java-cas/" style="font-size: 10px;">volatile, synchronized, java, cas.</a> <a href="/tags/warqp-affirmation-touch-physical-service/" style="font-size: 10px;">warqp, affirmation, touch, physical, service</a> <a href="/tags/幂等-http-中间件/" style="font-size: 10px;">幂等 http 中间件</a>
+      <a href="/tags/Access-restriction-The-type-Unsafe-is-not-API-restriction/" style="font-size: 10px;">Access restriction The type Unsafe is not API (restriction.</a> <a href="/tags/dp-recursively/" style="font-size: 10px;">dp recursively</a> <a href="/tags/essence-life/" style="font-size: 10px;">essence, life</a> <a href="/tags/ios11-ppt-open/" style="font-size: 10px;">ios11, ppt, open.</a> <a href="/tags/java-object-size-sizeof/" style="font-size: 10px;">java object size sizeof</a> <a href="/tags/volatile-synchronized-java-cas/" style="font-size: 10px;">volatile, synchronized, java, cas.</a> <a href="/tags/warqp-affirmation-touch-physical-service/" style="font-size: 10px;">warqp, affirmation, touch, physical, service</a> <a href="/tags/幂等-http-中间件/" style="font-size: 10px;">幂等 http 中间件</a>
     </div>
   </div>
 
@@ -214,7 +259,7 @@ jmp     LBB0_1
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -225,6 +270,10 @@ jmp     LBB0_1
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/10/25/CHANGE-MONEY/">CHANGE-MONEY</a>
+          </li>
         
           <li>
             <a href="/2019/08/15/5-Love-Languages/">5 Love Languages</a>
@@ -240,10 +289,6 @@ jmp     LBB0_1
         
           <li>
             <a href="/2019/04/30/idempotence/">幂等设计</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/19/The-Essence-of-Life/">The Essence of Life</a>
           </li>
         
       </ul>
